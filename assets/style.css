@@ -1,3 +1,8 @@
+/* Universal Box-Sizing for Cross-Browser Consistency */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* --- 1. Base Styles --- */
 body {
     font-family: Arial, sans-serif;
@@ -15,11 +20,11 @@ body {
     border-bottom: 5px solid #00b4d8; /* Accent line */
 }
 
-/* NEW: Styles for the inner header content wrapper */
+/* FIX: Constrain and center the inner header content to match the main container */
 .header-content {
     max-width: 1200px; /* Aligns with the main container */
-    margin: 0 auto;    /* Centers the content */
-    padding: 20px 20px; /* Add padding back inside the wrapper. (20px matches container padding) */
+    margin: 0 auto;    /* Centers the content (FIX) */
+    padding: 20px;     /* Match the padding of the main .container */
 }
 
 .header h1 { margin-bottom: 5px; font-size: 24px; }
@@ -87,7 +92,7 @@ body {
     gap: 20px; 
 }
 .card {
-    /* Adjusted flex-basis to ensure clean 3-column layout */
+    /* Set basis to slightly less than 33.33% to account for 20px gap */
     flex: 1 1 calc(33.33% - 15px); 
     background-color: white;
     border: 1px solid #e0e0e0;
