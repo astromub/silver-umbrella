@@ -4,4 +4,4 @@ theme: null
 baseurl: /silver-umbrella
 markdown: kramdown
 # --- Social Sharing Image Defaults ---
-social_image: /images/logo.png
+social_image: /images/coverlogo.png
