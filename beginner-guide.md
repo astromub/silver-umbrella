@@ -1,5 +1,5 @@
 ---
 layout: default
 title: Beginner Guide
-permalink: /beginner-guide.html
+permalink: /beginner-guide/
 ---
