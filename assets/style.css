@@ -5,7 +5,6 @@
 
 /* --- 1. Base Styles --- */
 body {
-    /* FONT CHANGE: Apply Roboto font family */
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -21,7 +20,7 @@ body {
     border-bottom: 5px solid #00b4d8;
 }
 
-/* FIX: Constrain and center the inner header content to match the main container */
+/* Constrain and center the inner header content */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -39,7 +38,7 @@ body {
     padding: 20px;
 }
 
-/* --- 4. Sidebar Navigation Styling --- */
+/* --- 4. Sidebar Navigation Styling (Desktop) --- */
 .sidebar {
     width: 250px; 
     flex-shrink: 0; 
@@ -86,14 +85,14 @@ body {
     margin-bottom: 20px;
 }
 
-/* --- 6. Card Grid for 'Latest' Section --- */
+/* --- 6. Card Grid for 'Latest' Section (Desktop) --- */
 .card-grid {
     display: flex;
     flex-wrap: wrap; 
     gap: 20px; 
 }
 .card {
-    /* Set basis to slightly less than 33.33% to account for 20px gap */
+    /* Three columns on desktop */
     flex: 1 1 calc(33.33% - 15px); 
     background-color: white;
     border: 1px solid #e0e0e0;
@@ -127,4 +126,61 @@ body {
     font-size: 12px;
     color: #777;
     border-top: 1px solid #eee;
+}
+
+/* ======================================= */
+/* ====== MOBILE RESPONSIvenESS (TABLETS & PHONES) ====== */
+/* ======================================= */
+
+@media (max-width: 900px) {
+    
+    /* 1. Header (Adjust padding for smaller screens) */
+    .header-content {
+        padding: 15px;
+    }
+
+    /* 2. Main Layout (Stack the sidebar above the content) */
+    .container {
+        flex-direction: column; /* Change from horizontal to vertical stack */
+        padding: 15px;
+    }
+    
+    /* 3. Sidebar (Take full width, remove side padding) */
+    .sidebar {
+        width: 100%; /* Sidebar now takes full width */
+        padding-right: 0;
+        margin-bottom: 20px; /* Add space below the sidebar */
+    }
+    
+    .sidebar nav ul {
+        display: flex; /* Make the menu items horizontal on mobile */
+        flex-wrap: wrap;
+        border-radius: 0;
+    }
+    .sidebar nav ul li {
+        flex: 1 1 50%; /* 2 items per row */
+        text-align: center;
+        border-right: 1px solid #e0e0e0;
+    }
+    .sidebar nav ul li:nth-child(even) {
+        border-right: none; /* Remove border on every second item */
+    }
+    .sidebar nav ul li:last-child {
+        border-right: none;
+    }
+
+
+    /* 4. Content Area (Remove spacing on edges) */
+    .content {
+        padding: 0;
+    }
+
+    /* 5. Card Grid (Change from 3 columns to 1 column) */
+    .card-grid {
+        gap: 15px; 
+    }
+    
+    .card {
+        flex: 1 1 100%; /* Cards take full width on mobile (1 item per row) */
+    }
 }
