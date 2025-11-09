@@ -30,7 +30,13 @@
     </div>
 
     <footer class="footer">
-        <p>Powered by <strong>{{ site.title }}</strong></p>
+        <div class="footer-left">
+            <p>Powered by <strong>{{ site.title }}</strong></p>
+        </div>
+        
+        <div class="footer-right">
+            {% include footer_nav.html %}
+        </div>
     </footer>
 </body>
 </html>
