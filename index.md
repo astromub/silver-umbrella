@@ -4,24 +4,33 @@ title: Home
 permalink: /index.html
 ---
 
-## 📌 Latest
+## Welcome to ASTROMub
+
+Explore binary trading strategies, risk management tools, and our Trade Tracker.
+
+---
+
+## 📈 Latest Strategies
 
 <div class="card-grid">
-
-    <div class="card">
-        <a href="#" class="card-link">
-            <h3>Trade Strategy #3: Candlestick Basics for Binary Traders</h3>
-            <p class="date">Nov 07, 2025</p>
-            <p class="excerpt">🥾 Candlestick Basics for Binary Traders</p>
-        </a>
-    </div>
-
-    <div class="card">
-        <a href="#" class="card-link">
-            <h3>Trade Strategy #2: Ultra-Fast Binary Strategy: RCI + AO + SMA</h3>
-            <p class="date">Nov 06, 2025</p>
-            <p class="excerpt">⚡ Ultra-Fast Binary Strategy: RCI + AO + SMA on 1-Min Candles</p>
-        </a>
-    </div>
-
-    </div>
+  <div class="card">
+    <h3>Trade Strategy #3</h3>
+    <p>Candlestick Basics for Binary Traders</p>
+    <small>Nov 15, 2015</small>
+  </div>
+  <div class="card">
+    <h3>Trade Strategy #2</h3>
+    <p>Ultra-fast Binary Strategy: RQ / AO + 5MA</p>
+    <small>Nov 15, 2015</small>
+  </div>
+  <div class="card">
+    <h3>Trade Tracker Guide</h3>
+    <p>Your step-by-step guide for using the ASTRONub Trade Tracker</p>
+    <small>Nov 15, 2015</small>
+  </div>
+  <div class="card">
+    <h3>Trade Strategy #1</h3>
+    <p>AO + 5MA for 1-Min Binary Trades</p>
+    <small>Nov 15, 2015</small>
+  </div>
+</div>
