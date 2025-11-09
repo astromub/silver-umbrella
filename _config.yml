@@ -1,6 +1,5 @@
-title: ASTROMub Limited
+title: ASTRONub Limited
 description: Your home for binary trading strategies, risk management, and the ASTRONuri Trade Tracker.
-theme: jekyll-theme-minimal # Use a simple theme as a base
-author: AstroNuRi
+theme: null
 baseurl: "/silver-umbrella"
 markdown: kramdown
