@@ -1,116 +1,113 @@
-/* --- 1. Base Styles --- */
+/* Reset & Base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8; /* Light gray background */
-    color: #333;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f4f4;
+  color: #333;
 }
 
-/* --- 2. Header Styling --- */
-.header {
-    background-color: #2c3e50; /* Dark blue/gray */
-    color: white;
-    padding: 20px 50px;
-    border-bottom: 5px solid #00b4d8; /* Accent line */
+/* Header */
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
-.header h1 { margin-bottom: 5px; font-size: 24px; }
-.header p { margin-top: 0; font-size: 14px; }
 
-/* --- 3. Main Layout (Flexbox) --- */
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header .tagline {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Layout */
 .container {
-    display: flex; /* Enables flexbox for the sidebar and content */
-    max-width: 1200px;
-    margin: 0 auto; /* Centers the content */
-    padding: 20px;
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  min-height: 80vh;
 }
 
-/* --- 4. Sidebar Navigation Styling --- */
+/* Sidebar */
 .sidebar {
-    width: 250px; /* Fixed width for the sidebar */
-    flex-shrink: 0; /* Prevents the sidebar from shrinking */
-    padding-right: 30px;
-}
-.sidebar nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    overflow: hidden;
-}
-.sidebar nav ul li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #333;
-    transition: background-color 0.2s;
-    border-bottom: 1px solid #e0e0e0;
-}
-.sidebar nav ul li:last-child a {
-    border-bottom: none;
+  width: 250px;
+  background: #2c2c2c;
+  color: #fff;
 }
 
-/* Sidebar Active State (Styles the link for the page you are currently viewing) */
-.sidebar nav ul li.active a {
-    background-color: #d8e0e6; /* Light gray/blue active background */
-    color: #2c3e50;
-    font-weight: bold;
-}
-.sidebar nav ul li:not(.active) a:hover {
-    background-color: #f0f0f0;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* --- 5. Content Area Styling --- */
+.sidebar li, .sidebar a {
+  display: block;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar a:hover {
+  background: #444;
+}
+
+/* Main Content */
 .content {
-    flex-grow: 1; /* Takes up the remaining space */
-}
-.content h2 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 20px;
+  flex: 1;
+  padding: 2rem;
+  background: #fff;
 }
 
-/* --- 6. Card Grid for 'Latest' Section --- */
+/* Card Grid */
 .card-grid {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
-.card {
-    /* Responsive sizing: 1 1 220px means it can grow/shrink but prefers a 220px width */
-    flex: 1 1 220px; 
-    background-color: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s;
-}
-.card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-.card h3 {
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #3498db; 
-}
-.card .date { font-size: 12px; color: #999; margin-bottom: 10px; }
-.card .excerpt { font-size: 14px; color: #555; }
 
-/* --- 7. Footer Styling --- */
-.footer {
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
-    font-size: 12px;
-    color: #777;
-    border-top: 1px solid #eee;
+.card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.card small {
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content {
+    padding: 1rem;
+  }
 }
