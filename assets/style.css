@@ -20,7 +20,7 @@ body {
     border-bottom: 5px solid #00b4d8;
 }
 
-/* Constrain and center the inner header content */
+/* Constrain and center the inner header content to match the main container */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -92,7 +92,6 @@ body {
     gap: 20px; 
 }
 .card {
-    /* Three columns on desktop */
     flex: 1 1 calc(33.33% - 15px); 
     background-color: white;
     border: 1px solid #e0e0e0;
@@ -120,19 +119,47 @@ body {
 
 /* --- 7. Footer Styling --- */
 .footer {
-    text-align: center;
-    padding: 15px;
+    /* NEW: Use Flexbox to align content */
+    display: flex;
+    justify-content: space-between; /* Pushes content to the left and right edges */
+    align-items: center; /* Centers items vertically */
+    
+    padding: 15px 20px;
     margin-top: 50px;
     font-size: 12px;
     color: #777;
     border-top: 1px solid #eee;
 }
+.footer-left p {
+    margin: 0; /* Remove default paragraph margins so it aligns properly */
+}
+
+/* Styles for the navigation links in the footer */
+.footer-right nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-right nav ul li {
+    display: inline;
+    margin-left: 15px; /* Spacing between footer links */
+}
 
 /* ======================================= */
-/* ====== MOBILE RESPONSIvenESS (TABLETS & PHONES) ====== */
+/* ====== MOBILE RESPONSIvenESS ====== */
 /* ======================================= */
 
 @media (max-width: 900px) {
+    
+    /* NEW: Footer stacking for mobile */
+    .footer {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+        gap: 10px; /* space between stacked items */
+    }
+    .footer-right {
+        order: -1; /* Move navigation to the top of the stacked list */
+    }
     
     /* 1. Header (Adjust padding for smaller screens) */
     .header-content {
@@ -141,34 +168,33 @@ body {
 
     /* 2. Main Layout (Stack the sidebar above the content) */
     .container {
-        flex-direction: column; /* Change from horizontal to vertical stack */
+        flex-direction: column;
         padding: 15px;
     }
     
     /* 3. Sidebar (Take full width, remove side padding) */
     .sidebar {
-        width: 100%; /* Sidebar now takes full width */
+        width: 100%;
         padding-right: 0;
-        margin-bottom: 20px; /* Add space below the sidebar */
+        margin-bottom: 20px;
     }
     
     .sidebar nav ul {
-        display: flex; /* Make the menu items horizontal on mobile */
+        display: flex;
         flex-wrap: wrap;
         border-radius: 0;
     }
     .sidebar nav ul li {
-        flex: 1 1 50%; /* 2 items per row */
+        flex: 1 1 50%; 
         text-align: center;
         border-right: 1px solid #e0e0e0;
     }
     .sidebar nav ul li:nth-child(even) {
-        border-right: none; /* Remove border on every second item */
+        border-right: none;
     }
     .sidebar nav ul li:last-child {
         border-right: none;
     }
-
 
     /* 4. Content Area (Remove spacing on edges) */
     .content {
@@ -181,6 +207,6 @@ body {
     }
     
     .card {
-        flex: 1 1 100%; /* Cards take full width on mobile (1 item per row) */
+        flex: 1 1 100%;
     }
 }
