@@ -1,23 +1,25 @@
 ---
 layout: default
 title: Home
-permalink: /index.html
+permalink: /
 ---
 
-## Welcome to ASTROMub
-
-Explore binary trading strategies, risk management tools, and our Trade Tracker.
-
----
-
-## 📌 Latest Strategies
+## 📌 Latest
 
 <div class="card-grid">
-  {% for post in site.posts %}
-  <div class="card">
-    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-    <p>{{ post.description }}</p>
-    <small>{{ post.date | date: "%b %d, %Y" }}</small>
-  </div>
-  {% endfor %}
-</div>
+
+    {% for post in site.posts limit:6 %}
+    
+    <div class="card">
+        <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
+            
+            <h3>{{ post.title }}</h3>
+            
+            <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+            
+            <p class="excerpt">{{ post.excerpt }}</p>
+        </a>
+    </div>
+
+    {% endfor %}
+    </div>
