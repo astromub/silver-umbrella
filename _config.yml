@@ -3,3 +3,5 @@ description: Your home for binary trading strategies, risk management, and the A
 theme: null
 baseurl: /silver-umbrella
 markdown: kramdown
+# --- Social Sharing Image Defaults ---
+social_image: /images/logo.png
