@@ -7,20 +7,25 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css"> 
 </head>
 <body>
-    ```
 
-### 2. Update `_includes/sidebar.html` (Navigation Link Fix)
+    <header class="header">
+        <h1>{{ site.title }}</h1>
+        <p>{{ site.description }}</p>
+    </header>
 
-You must prepend `{{ site.baseurl }}` to all your `href` attributes.
+    <div class="container">
+        
+        <aside class="sidebar">
+            {% include sidebar.html %}
+        </aside>
 
-```html
-<aside class="sidebar">
-    <nav>
-        <ul>
-            <li{% if page.url == '/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/">Home</a></li> 
-            <li{% if page.url == '/about/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/about/">About</a></li>
-            <li{% if page.url == '/trade-tracker/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/trade-tracker/">Trade Tracker</a></li>
-            <li{% if page.url == '/beginner-guide/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/beginner-guide/">Beginner Guide</a></li>
-        </ul>
-    </nav>
-</aside>
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
+
+    <footer class="footer">
+        <p>Powered by <strong>{{ site.title }}</strong></p>
+    </footer>
+</body>
+</html>
