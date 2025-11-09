@@ -1,16 +1,13 @@
 <aside class="sidebar">
-  <ul>
-    <li{% if page.url == "/" %} class="active"{% endif %}>
-      <a href="{{ '/index.html' | relative_url }}">Home</a>
-    </li>
-    <li{% if page.url == "/about.html" %} class="active"{% endif %}>
-      <a href="{{ '/about.html' | relative_url }}">About</a>
-    </li>
-    <li{% if page.url == "/trade-tracker.html" %} class="active"{% endif %}>
-      <a href="{{ '/trade-tracker.html' | relative_url }}">Trade Tracker</a>
-    </li>
-    <li{% if page.url == "/beginner-guide.html" %} class="active"{% endif %}>
-      <a href="{{ '/beginner-guide.html' | relative_url }}">Beginner Guide</a>
-    </li>
-  </ul>
+    <nav>
+        <ul>
+            <li{% if page.url == '/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/">Home</a></li> 
+            
+            <li{% if page.url == '/about/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/about/">About</a></li>
+            
+            <li{% if page.url == '/trade-tracker/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/trade-tracker/">Trade Tracker</a></li>
+            
+            <li{% if page.url == '/beginner-guide/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/beginner-guide/">Beginner Guide</a></li>
+        </ul>
+    </nav>
 </aside>
