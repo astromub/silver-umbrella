@@ -9,17 +9,15 @@ permalink: /
 <div class="card-grid">
 
     {% for post in site.posts limit:6 %}
-    
+
     <div class="card">
         <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
-            
             <h3>{{ post.title }}</h3>
-            
             <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
-            
             <p class="excerpt">{{ post.excerpt }}</p>
         </a>
     </div>
 
-    {% endfor %}
-    </div>
+    {% endfor %} 
+
+</div>
