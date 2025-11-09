@@ -1,4 +1,4 @@
-/* Universal Box-Sizing for Cross-Browser Consistency */
+/* Universal Box-Sizing MUST be first for Cross-Browser Consistency */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -19,14 +19,11 @@ body {
     padding: 0;
     border-bottom: 5px solid #00b4d8;
 }
-
-/* Constrain and center the inner header content to match the main container */
 .header-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
 .header h1 { margin-bottom: 5px; font-size: 24px; }
 .header p { margin-top: 0; font-size: 14px; }
 
@@ -38,7 +35,7 @@ body {
     padding: 20px;
 }
 
-/* --- 4. Sidebar Navigation Styling (Desktop) --- */
+/* --- 4. Sidebar Navigation Styling --- */
 .sidebar {
     width: 250px; 
     flex-shrink: 0; 
@@ -64,8 +61,6 @@ body {
 .sidebar nav ul li:last-child a {
     border-bottom: none;
 }
-
-/* Sidebar Active State */
 .sidebar nav ul li.active a {
     background-color: #d8e0e6; 
     color: #2c3e50;
@@ -79,13 +74,8 @@ body {
 .content {
     flex-grow: 1;
 }
-.content h2 {
-    color: #333;
-    font-size: 20px;
-    margin-bottom: 20px;
-}
 
-/* --- 6. Card Grid for 'Latest' Section (Desktop) --- */
+/* --- 6. Card Grid Styling --- */
 .card-grid {
     display: flex;
     flex-wrap: wrap; 
@@ -100,41 +90,35 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s;
 }
-.card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
 .card-link {
     text-decoration: none;
     color: inherit;
     display: block;
 }
-.card h3 {
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #3498db; 
-}
-.card .date { font-size: 12px; color: #999; margin-bottom: 10px; }
-.card .excerpt { font-size: 14px; color: #555; }
 
-/* --- 7. Footer Styling --- */
+/* --- 7. Footer Styling (Alignment Fixes) --- */
+.footer-wrapper {
+    /* Full-width container for the border/margin at the top */
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding-top: 50px;
+}
 .footer {
-    /* NEW: Use Flexbox to align content */
-    display: flex;
-    justify-content: space-between; /* Pushes content to the left and right edges */
-    align-items: center; /* Centers items vertically */
+    /* ALIGNMENT FIX: Constraints footer content to 1200px and centers it */
+    max-width: 1200px; 
+    margin: 0 auto;
     
-    padding: 15px 20px;
-    margin-top: 50px;
+    display: flex;
+    justify-content: space-between; /* Pushes content to the far left and far right */
+    align-items: center;
+    
+    padding: 15px 20px; 
     font-size: 12px;
     color: #777;
-    border-top: 1px solid #eee;
-}
-.footer-left p {
-    margin: 0; /* Remove default paragraph margins so it aligns properly */
 }
 
-/* Styles for the navigation links in the footer */
+.footer-left p { margin: 0; }
+
 .footer-right nav ul {
     list-style: none;
     padding: 0;
@@ -142,71 +126,34 @@ body {
 }
 .footer-right nav ul li {
     display: inline;
-    margin-left: 15px; /* Spacing between footer links */
+    margin-left: 15px; 
 }
+
 
 /* ======================================= */
 /* ====== MOBILE RESPONSIvenESS ====== */
 /* ======================================= */
 
 @media (max-width: 900px) {
-    
-    /* NEW: Footer stacking for mobile */
+    /* Footer stacking for mobile */
     .footer {
-        flex-direction: column; /* Stack items vertically */
+        flex-direction: column;
         text-align: center;
-        gap: 10px; /* space between stacked items */
+        gap: 10px;
     }
     .footer-right {
-        order: -1; /* Move navigation to the top of the stacked list */
+        order: -1; 
     }
     
-    /* 1. Header (Adjust padding for smaller screens) */
-    .header-content {
-        padding: 15px;
-    }
-
-    /* 2. Main Layout (Stack the sidebar above the content) */
-    .container {
-        flex-direction: column;
-        padding: 15px;
-    }
-    
-    /* 3. Sidebar (Take full width, remove side padding) */
-    .sidebar {
-        width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .sidebar nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        border-radius: 0;
-    }
-    .sidebar nav ul li {
-        flex: 1 1 50%; 
-        text-align: center;
-        border-right: 1px solid #e0e0e0;
-    }
-    .sidebar nav ul li:nth-child(even) {
-        border-right: none;
-    }
-    .sidebar nav ul li:last-child {
-        border-right: none;
-    }
-
-    /* 4. Content Area (Remove spacing on edges) */
-    .content {
-        padding: 0;
-    }
-
-    /* 5. Card Grid (Change from 3 columns to 1 column) */
-    .card-grid {
-        gap: 15px; 
-    }
-    
-    .card {
-        flex: 1 1 100%;
-    }
+    /* Mobile-specific styles for header/main content */
+    .header-content { padding: 15px; }
+    .container { flex-direction: column; padding: 15px; }
+    .sidebar { width: 100%; padding-right: 0; margin-bottom: 20px; }
+    .sidebar nav ul { display: flex; flex-wrap: wrap; border-radius: 0; }
+    .sidebar nav ul li { flex: 1 1 50%; text-align: center; border-right: 1px solid #e0e0e0; }
+    .sidebar nav ul li:nth-child(even) { border-right: none; }
+    .sidebar nav ul li:last-child { border-right: none; }
+    .content { padding: 0; }
+    .card-grid { gap: 15px; }
+    .card { flex: 1 1 100%; }
 }
