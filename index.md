@@ -10,27 +10,14 @@ Explore binary trading strategies, risk management tools, and our Trade Tracker.
 
 ---
 
-## 📈 Latest Strategies
+## 📌 Latest Strategies
 
 <div class="card-grid">
+  {% for post in site.posts %}
   <div class="card">
-    <h3>Trade Strategy #3</h3>
-    <p>Candlestick Basics for Binary Traders</p>
-    <small>Nov 15, 2015</small>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    <p>{{ post.description }}</p>
+    <small>{{ post.date | date: "%b %d, %Y" }}</small>
   </div>
-  <div class="card">
-    <h3>Trade Strategy #2</h3>
-    <p>Ultra-fast Binary Strategy: RQ / AO + 5MA</p>
-    <small>Nov 15, 2015</small>
-  </div>
-  <div class="card">
-    <h3>Trade Tracker Guide</h3>
-    <p>Your step-by-step guide for using the ASTRONub Trade Tracker</p>
-    <small>Nov 15, 2015</small>
-  </div>
-  <div class="card">
-    <h3>Trade Strategy #1</h3>
-    <p>AO + 5MA for 1-Min Binary Trades</p>
-    <small>Nov 15, 2015</small>
-  </div>
+  {% endfor %}
 </div>
