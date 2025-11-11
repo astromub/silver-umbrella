@@ -2,6 +2,7 @@
 layout: default
 title: About
 permalink: /about/
+image: images/traderscreen.png
 ---
 
 ## ❓ About ASTROMub Limited
