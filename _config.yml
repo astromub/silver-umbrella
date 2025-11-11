@@ -5,3 +5,5 @@ baseurl: /silver-umbrella
 markdown: kramdown
 # --- Social Sharing Image Defaults ---
 social_image: /images/coverlogo.png
+url: "https://astromub.github.io"
+
