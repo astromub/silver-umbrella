@@ -1,5 +1,5 @@
 ---
-title: "Trade Strategy #1: 30-Second Strategy (SMA, Fractals, RCI) 🚀"
+title: "Trade Strategy #10: 30-Second Strategy (SMA, Fractals, RCI) 🚀"
 date: 2025-11-11
 layout: default
 categories: beginner
