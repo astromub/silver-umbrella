@@ -2,7 +2,7 @@
 title: "Trade Strategy #1: 30-Second Strategy (SMA, Fractals, RCI) 🚀"
 date: 2025-11-11
 layout: default
-categories: Beginner
+categories: beginner
 tags: [candlestick, binary, support resistance, bullish, bearish,RCI,Fractal,Moving Average]
 image: /assets/images/astronuri.png
 ---
