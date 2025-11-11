@@ -96,6 +96,15 @@ body {
     display: block;
 }
 
+.card.no-posts {
+  background: #fff3f3;
+  border: 1px solid #e0b4b4;
+  color: #a94442;
+  padding: 1.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
 /* --- 7. Footer Styling (Alignment Fixes) --- */
 .footer-wrapper {
     /* Full-width container for the border/margin at the top */
