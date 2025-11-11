@@ -4,7 +4,7 @@ date: 2025-11-07
 layout: default
 categories: beginner
 tags: [candlestick, binary, support resistance, bullish, bearish]
-image: /assets/images/coverlogo.png
+image: /images/coverlogo.png
 ---
 
 # 🕯️ Candlestick Basics for Binary Traders
