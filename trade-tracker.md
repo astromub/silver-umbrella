@@ -2,6 +2,7 @@
 layout: default
 title: Beginner Guide
 permalink: /trade-tracker/
+image: images/tracker.png
 ---
 
 <html lang="en">
