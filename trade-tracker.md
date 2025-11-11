@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Beginner Guide
+title: ASTRONuRi Trade Tracker
 permalink: /trade-tracker/
 image: images/tracker.png
 ---
