@@ -7,18 +7,21 @@ permalink: /beginner-guide/
 ## 🧠 Beginner Guide & Resources
 
 <div class="card-grid">
-  {% for post in site.categories.beginner %}
-  <div class="card">
-    <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
-      <h3>{{ post.title }}</h3>
-      <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
-      <p class="excerpt">{{ post.description | truncatewords: 10 }}</p>
-    </a>
-  </div>
-  {% endfor %}
+  {% if site.categories.beginner.size > 0 %}
+    {% for post in site.categories.beginner %}
+    <div class="card">
+      <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
+        <h3>{{ post.title }}</h3>
+        <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+        <p class="excerpt">{{ post.description | truncatewords: 10 }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  {% else %}
+    <div class="card no-posts">
+      <h3>🚫 No Beginner Posts Found</h3>
+      <p>We couldn’t find any beginner strategies at the moment.</p>
+      <p>Check back soon or explore our Trade Tracker for insights.</p>
+    </div>
+  {% endif %}
 </div>
-
-<hr><hr>
-
-### Still Have Questions?
-Contact our support team for personalized guidance.
