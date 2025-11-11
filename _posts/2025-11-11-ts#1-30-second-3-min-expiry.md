@@ -17,14 +17,14 @@ Indicator	Setting	Role in the Strategy
 SMA(5) & SMA(10)	5 and 10 periods	Momentum Trigger: Signals the immediate shift in short-term price direction via a crossover.
 Fractal Band(2)	2 periods	Dynamic S/R: Identifies recent high/low points that price must respect as short-term support or resistance.
 RCI(9) (Rank Correlation Index)	9 periods	Trend Quality Filter: Confirms if the momentum is orderly and consistent (near ±1.0) rather than random noise (near 0).
-
+---
 ## 2. The Non-Negotiable Foundation: Multi-Timeframe Confirmation
 Trading on 30-second charts without higher timeframe context is pure gambling. We must confirm the overall market direction on a higher chart.
 
 Your Higher Timeframe (HTF): Use a 5-minute chart with a SMA(20).
 
 The Golden Rule: Only look for BUY (Call) opportunities if the 5m price is above the SMA(20). Only look for SELL (Put) opportunities if the 5m price is below the SMA(20).
-
+---
 ##  3. The Strategy: When to Hit BUY or SELL
 These are the simultaneous conditions that must be met on your 30-second chart for a high-probability entry:
 
@@ -43,7 +43,7 @@ Momentum Shift	SMA(5) crosses BELOW SMA(10).
 Bounce off Resistance	Price bounces DOWN from the recent upper Fractal Band(2).
 Orderly Trend	RCI(9) is below the 0 line and falling toward -1.0.
 Execution	Enter SELL (Put) at the close of the confirmation candle. Expiry: 3 Minutes.
-
+---
 ## 4. 🛡️ Essential Risk Management: Integrating the ASTRONuRi Trade Tracker
 In high-speed trading, human emotion is the enemy. You need automated discipline. The ASTRONuRi Trade Tracker is crucial here because it enforces your risk plan without emotion, ensuring a bad streak doesn't wipe you out.
 
@@ -55,7 +55,7 @@ LOG WIN / LOG LOSS	Immediately log the outcome after every 3-minute expiry.	Real
 Suggested Next Trade Cost	Follow the tracker’s calculated suggestion.	Removes Error: Eliminates manual calculation errors in a time-sensitive environment, ensuring every position adheres to your 1% or 2% risk rule.
 
 The Goal: Let the SMAs, Fractals, and RCI find the trade, but let the ASTRONuRi Trade Tracker enforce the discipline. Never risk more than the tracker permits!
-
+---
 ## Conclusion: Discipline Wins the Scalp War
 This SMA(5)/SMA(10) + Fractal + RCI(9) strategy is highly effective for capturing short, strong momentum bursts. However, its success hinges on one thing: discipline.
 
