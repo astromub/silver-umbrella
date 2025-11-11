@@ -4,7 +4,7 @@ date: 2025-11-11
 layout: default
 categories: beginner
 tags: [candlestick, binary, support resistance, bullish, bearish,RCI,Fractal,Moving Average]
-image: /assets/images/astronuri.png
+image: /assets/images/coverlogo.png
 ---
 # Unleash the Scalper: My High-Octane 30-Second Strategy (SMA, Fractals, RCI) 
 ---
