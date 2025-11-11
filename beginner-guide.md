@@ -1,32 +1,24 @@
 ---
 layout: default
 title: Beginner Guide
-permalink: /beginner-guide/
+permalink: /beginner-guide.html
 ---
 
-## 📖 Beginner Guide & Resources
-
-Welcome to the beginner's hub! Here are the core topics and blog posts dedicated to getting you started safely and effectively.
+## 🧠 Beginner Guide & Resources
 
 <div class="card-grid">
-    
-    {% for post in site.categories.Beginner %}
-    
-    <div class="card">
-        <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
-            
-            <h3>{{ post.title }}</h3>
-            
-            <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
-            
-            <p class="excerpt">{{ post.excerpt }}</p>
-        </a>
-    </div>
+  {% for post in site.categories.beginner %}
+  <div class="card">
+    <a href="{{ site.baseurl }}{{ post.url }}" class="card-link">
+      <h3>{{ post.title }}</h3>
+      <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+      <p class="excerpt">{{ post.description | truncatewords: 10 }}</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
 
-    {% endfor %}
-    </div>
-
-<hr>
+<hr><hr>
 
 ### Still Have Questions?
 Contact our support team for personalized guidance.
