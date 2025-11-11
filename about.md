@@ -15,4 +15,4 @@ Our mission is to empower you with the knowledge and resources to trade confiden
 
 * **Risk Management:** Protecting capital is key.
 * **Simple Strategies:** Easy-to-understand and implement trading systems.
-* **The ASTRONuri Trade Tracker:** A proprietary tool for logging and analyzing your trades.
+* **The [ASTRONuri Trade Tracker](https://astromub.github.io/silver-umbrella/trade-tracker/):** A proprietary tool for logging and analyzing your trades.
