@@ -2,7 +2,7 @@
 title: "Trade Strategy #3: Candlestick Basics for Binary Traders"
 date: 2025-11-07
 layout: default
-categories: Beginner
+categories: beginner
 tags: [candlestick, binary, support resistance, bullish, bearish]
 image: /assets/images/astronuri.png
 ---
