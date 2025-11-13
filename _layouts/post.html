@@ -1,6 +1,9 @@
 {% include header.html %}
+
 <div class="container">
   {% include sidebar.html %}
+  {% include footer_nav.html %} <!-- Optional: if this is part of your nav -->
+
   <main class="content">
     <h1>{{ page.title }}</h1>
     <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>
@@ -8,7 +11,7 @@
 
     <div class="wrapper">
       <h2>💬 Comments</h2>
-       <script src="https://giscus.app/client.js"
+      <script src="https://giscus.app/client.js"
         data-repo="astromub/silver-umbrella"
         data-repo-id="R_kgDOQRvM4Q"
         data-category="General"
@@ -22,8 +25,9 @@
         data-lang="en"
         crossorigin="anonymous"
         async>
-     </script>
+      </script>
     </div>
   </main>
 </div>
+
 {% include footer.html %}
