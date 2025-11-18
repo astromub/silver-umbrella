@@ -1,60 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>{{ page.title }} - {{ site.title }}</title>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ page.title | default: site.title }}">
-    <meta property="og:url" content="{{ page.url | absolute_url }}">
-    
-    {% comment %}
-        Liquid check: 
-        1. Does the post have 'page.image' defined in its front matter? 
-        2. If not, use the 'site.social_image' we set in _config.yml.
-    {% endcomment %}
-    {% if page.image %}
-        <meta property="og:image" content="{{ page.image | absolute_url }}">
-    {% else %}
-        <meta property="og:image" content="{{ site.social_image | absolute_url }}">
-    {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
 
-    </head>
+  {% if page.image %}
+    <meta property="og:image" content="{{ page.image | absolute_url }}">
+  {% else %}
+    <meta property="og:image" content="{{ site.social_image | absolute_url }}">
+  {% endif %}
+</head>
 <body>
 
-    <header class="header">
-        <div class="header-content"> 
-            <h1>{{ site.title }}</h1>
-            <p>{{ site.description }}</p>
+  <header class="header">
+    <div class="header-content">
+      <div class="brand-row">
+        <button id="sidebarToggle" class="sidebar-toggle" aria-expanded="false" aria-controls="siteSidebar" aria-label="Open menu">☰</button>
+        <div>
+          <h1 class="site-title">{{ site.title }}</h1>
+          <p class="site-tagline">{{ site.description }}</p>
         </div>
-    </header>
-
-    <div class="container">
-        
-        <aside class="sidebar">
-            {% include sidebar.html %}
-        </aside>
-
-        <main class="content">
-            {{ content }}
-        </main>
+      </div>
     </div>
+  </header>
 
-    <div class="footer-wrapper">
-        <footer class="footer">
-            <div class="footer-left">
-                <p>Powered by <strong>{{ site.title }}</strong></p>
-            </div>
-            <div class="footer-right">
-                {% include footer_nav.html %}
-            </div>
-        </footer>
-    </div>
+  <div class="container">
+    <aside id="siteSidebar" class="sidebar" role="complementary" aria-hidden="true">
+      <div class="sidebar-inner">
+        {% include sidebar.html %}
+      </div>
+    </aside>
+
+    <main class="content" role="main">
+      {{ content }}
+    </main>
+  </div>
+
+  <div class="footer-wrapper">
+    <footer class="footer">
+      <div class="footer-left">
+        <p>Powered by <strong>{{ site.title }}</strong></p>
+      </div>
+      <div class="footer-right">
+        {% include footer_nav.html %}
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('sidebarToggle');
+      var sidebar = document.getElementById('siteSidebar');
+
+      function setAria(open) {
+        toggle.setAttribute('aria-expanded', open);
+        sidebar.setAttribute('aria-hidden', !open);
+      }
+
+      toggle.addEventListener('click', function () {
+        var open = toggle.getAttribute('aria-expanded') === 'true';
+        setAria(!open);
+        document.body.classList.toggle('sidebar-open', !open);
+      });
+
+      // Close sidebar when clicking outside on small screens
+      document.addEventListener('click', function (e) {
+        if (!document.body.classList.contains('sidebar-open')) return;
+        if (!sidebar.contains(e.target) && e.target !== toggle) {
+          setAria(false);
+          document.body.classList.remove('sidebar-open');
+        }
+      });
+
+      // ensure correct state on resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 900) {
+          setAria(true);
+          document.body.classList.remove('sidebar-open');
+        } else {
+          setAria(false);
+        }
+      });
+
+      // initial
+      if (window.innerWidth > 900) setAria(true);
+    })();
+  </script>
 </body>
 </html>
