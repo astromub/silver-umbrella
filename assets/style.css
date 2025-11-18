@@ -1,14 +1,12 @@
 /* ================================================
    ASTROmub - style.css
-   Recreated: mobile-first, touch-friendly, accessible
+   Mobile-first, accessible, touch-friendly
    ================================================ */
 
-/* Universal Box-Sizing MUST be first for Cross-Browser Consistency */
+/* Box-sizing */
 *, *::before, *::after { box-sizing: border-box; }
 
-/* ---------------------------
-   1. Base (mobile-first)
-   --------------------------- */
+/* Design tokens */
 :root{
   --bg: #f8f8f8;
   --card: #ffffff;
@@ -16,160 +14,146 @@
   --accent: #00b4d8;
   --accent-dark: #1e88e5;
   --danger: #ef4444;
-  --success: #10b981;
   --radius: 10px;
   --gap: 12px;
   --max-width: 1200px;
 }
 
+/* Base */
 html,body{height:100%}
 body{
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg);
-  color: #222;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.35;
-  -webkit-text-size-adjust: 100%;
+  font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  margin: 0; padding: 0; background: var(--bg); color: #222;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  line-height: 1.35; -webkit-text-size-adjust: 100%;
 }
 
-/* Links */
+/* Links & focus */
 a { color: var(--accent-dark); text-decoration: none; }
 a:focus, button:focus { outline: 3px solid rgba(30,136,229,0.12); outline-offset: 3px; }
 
-/* Utility */
+/* Container */
 .container { max-width: var(--max-width); margin: 0 auto; padding: 12px; }
+.container--cols { display: block; }
 
-/* Buttons (mobile friendly) */
-button, .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 10px 14px;
-  border: 0;
-  border-radius: 10px;
-  background: var(--accent-dark);
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-.btn-neutral { background:#374151; color:#fff; }
-.btn-danger { background: var(--danger); color: #fff; }
-.btn-ghost { background: transparent; color: var(--accent-dark); border: 1px solid rgba(0,0,0,0.06); }
-
-/* Small text helper */
-.small { font-size: 0.85rem; color: var(--muted); }
-
-/* --------------------------------
-   2. Header
-   -------------------------------- */
+/* Header */
 .header {
-  background-color: #2c3e50;
-  color: white;
-  padding: 12px 0;
-  border-bottom: 5px solid var(--accent);
+  background-color: #2c3e50; color: #fff; padding: 12px 0; border-bottom: 5px solid var(--accent);
 }
 .header-content { max-width: var(--max-width); margin: 0 auto; padding: 0 12px; display:flex; gap:12px; align-items:center; }
 .site-title { margin: 0; font-size: 1.05rem; font-weight:700; }
-.site-tagline { margin: 2px 0 0; font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+.site-tagline { margin: 2px 0 0; font-size: 0.85rem; color: rgba(255,255,255,0.9); }
 
-/* Sidebar toggle for small screens */
+/* Sidebar toggle */
 .sidebar-toggle {
   width:44px; height:44px; display:inline-flex; align-items:center; justify-content:center;
   font-size:18px; background: transparent; color: #fff; border:0; border-radius:8px; cursor:pointer;
 }
 .sidebar-toggle:focus { box-shadow: 0 0 0 3px rgba(0,180,216,0.12); }
 
-/* --------------------------------
-   3. Layout (mobile-first single column)
-   -------------------------------- */
-.container--layout { max-width: var(--max-width); margin: 0 auto; padding: 12px; }
-.container--cols { display:block; }
-
-/* Sidebar (collapses above content on small screens) */
+/* Sidebar (mobile-first: stacked) */
 .sidebar { width: 100%; margin-bottom: 12px; }
 .sidebar-inner {
   background: var(--card); padding: 12px; border-radius: var(--radius);
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
 }
+.sidebar nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar nav ul li { margin: 0 0 8px 0; }
+.sidebar nav ul li a {
+  display:block; padding:12px 14px; text-decoration:none; color:#333;
+  background:#fff; border:1px solid rgba(0,0,0,0.04); border-radius:8px;
+}
+.sidebar nav ul li.active a { background:#d8e0e6; color:#2c3e50; font-weight:700; }
 
-/* Content area */
+/* Content */
 .content { width: 100%; }
 
-/* Card component */
+/* Card */
 .card {
-  background: var(--card);
-  border-radius: 10px;
-  padding: 14px;
-  margin-bottom: var(--gap);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  border: 1px solid rgba(0,0,0,0.04);
+  background: var(--card); border-radius: 10px; padding: 14px; margin-bottom: var(--gap);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04);
 }
 .card h2 { margin:0 0 8px 0; font-size: 1rem; }
 .card .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
 .field { flex:1 1 100%; font-size:0.95rem; }
 .meter, .suggest { margin-top:8px; font-weight:700; font-size:1rem; color:#111; }
 
-/* Compact helpers */
+/* Buttons */
+button, .btn {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding:10px 14px; border:0; border-radius:10px;
+  background: var(--accent-dark); color:#fff; font-weight:600; cursor:pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-neutral { background:#374151; color:#fff; }
+.btn-danger { background: var(--danger); color:#fff; }
+.btn-ghost { background: transparent; color: var(--accent-dark); border: 1px solid rgba(0,0,0,0.06); }
+
+/* Card helpers */
 .btn-row { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
 .small-btns { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
-
-/* Session status compact */
 .session-meta { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
 
 /* Footer */
-.footer-wrapper { width: 100%; border-top: 1px solid #eee; padding-top: 18px; margin-top: 10px; }
-.footer {
-  max-width: var(--max-width); margin: 0 auto; display:flex; justify-content:space-between; align-items:center;
-  padding: 12px; font-size: 0.87rem; color: var(--muted);
-}
+.footer-wrapper { width:100%; border-top: 1px solid #eee; padding-top: 18px; margin-top: 10px; }
+.footer { max-width: var(--max-width); margin: 0 auto; display:flex; justify-content:space-between; align-items:center; padding: 12px; font-size: 0.87rem; color: var(--muted); }
 .footer-left, .footer-right { display:flex; gap:8px; align-items:center; }
 
-/* Footer toolbar item (compact display) */
+/* Footer toolbar */
 .footer-toolbar { display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap; }
-.footer-toolbar .ft-item {
-  background: #fff; padding:8px 10px; border-radius:8px; font-size:13px; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+.footer-toolbar .ft-item { background:#fff; padding:8px 10px; border-radius:8px; font-size:13px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+
+/* Card grid defaults */
+.card-grid { display:flex; flex-wrap:wrap; gap:20px; }
+.card { flex: 1 1 100%; }
+
+/* Accessibility */
+.visually-hidden { position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* Sidebar open overlay state (mobile only) */
+body.sidebar-open { overflow: hidden; }
+body.sidebar-open .sidebar-inner {
+  position: fixed; top: 12px; left: 12px; right: 12px; z-index: 1000;
+  max-height: calc(100vh - 24px); overflow: auto;
 }
 
-/* --------------------------------
-   4. Desktop enhancements (wider view)
-   -------------------------------- */
-@media (min-width: 901px) {
-  .container--cols { display:grid; grid-template-columns: 1fr 320px; gap:18px; padding: 20px; }
-  .sidebar { width: auto; margin:0; }
-  .sidebar-inner { position: sticky; top: 20px; }
-  .sidebar-toggle { display: none; }
-  .header-content { padding: 0 20px; }
-  .footer { padding: 12px 20px; }
-  .card { padding: 16px; }
-}
+/* -----------------------------
+   Breakpoints: tablet & desktop
+   ----------------------------- */
 
-/* Medium screens (tablet) */
+/* Tablet / small laptop */
 @media (min-width: 481px) and (max-width: 900px) {
   .container { padding: 18px; }
   .card { padding: 16px; }
-  .sidebar nav ul li { flex: 1 1 33%; }
+  .sidebar nav ul li { flex: 1 1 33%; display:inline-block; margin-right:6px; }
+  .sidebar nav ul li a { padding:12px 10px; }
+  .card { flex: 1 1 calc(50% - 12px); }
 }
 
-/* --------------------------------
-   5. Small screens (<= 480px)
-   -------------------------------- */
+/* Desktop: two-column layout */
+@media (min-width: 901px) {
+  .container--cols { display: grid; grid-template-columns: 1fr 320px; gap: 18px; padding: 20px; }
+  .sidebar { width: auto; margin: 0; }
+  .sidebar-inner { position: sticky; top: 20px; }
+  .sidebar-toggle { display: none; }
+  .footer { padding: 12px 20px; }
+  .card { padding: 16px; }
+  /* Ensure sidebar visible on desktop */
+  .sidebar { display: block !important; }
+  body.sidebar-open { overflow: visible; }
+  .card { flex: 1 1 calc(33.333% - 14px); }
+}
+
+/* Very small screens adjustments */
 @media (max-width: 480px) {
   .container { padding: 10px; }
   .header-content { padding: 10px; gap:10px; align-items:center; }
   .site-title { font-size: 0.95rem; }
   .site-tagline { font-size: 0.78rem; color: rgba(255,255,255,0.9); margin-top:2px; }
 
-  /* Layout: full width blocks stacked */
-  .container--cols { display:block; }
   .sidebar { width: 100%; margin-bottom: 12px; }
   .sidebar-inner { padding: 12px; border-radius: 12px; }
 
-  /* Sidebar navigation as responsive grid */
   .sidebar nav ul { display:flex; flex-wrap:wrap; gap:6px; padding:6px; margin:0; background:transparent; border-radius:8px; }
   .sidebar nav ul li { flex: 1 1 50%; list-style:none; }
   .sidebar nav ul li a {
@@ -177,85 +161,22 @@ button, .btn {
     width:100%; padding:12px 8px; border-radius:8px; background:#fff; border:1px solid rgba(0,0,0,0.04);
   }
 
-  /* Cards full width */
   .card { width: 100%; padding: 14px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
   .card-grid { display:block; gap: 12px; }
 
-  /* Increase tap targets */
   button, .btn, .sidebar nav ul li a { min-height:48px; padding:12px 14px; font-size:15px; }
 
-  /* Footer stacked */
   .footer { flex-direction: column; text-align:center; gap:8px; padding:10px; }
   .footer-left, .footer-right { width:100%; justify-content:center; }
   .footer-right nav ul li { display:inline-block; margin-left:8px; font-size:13px; }
 }
 
-/* --------------------------------
-   6. Card-grid and card sizing
-   -------------------------------- */
-.card-grid {
-  display:flex; flex-wrap:wrap; gap:20px;
-}
-.card { flex: 1 1 100%; }
-
-/* If you want 2-up on medium screens */
-@media (min-width: 600px) and (max-width: 900px) {
-  .card { flex: 1 1 calc(50% - 12px); }
-}
-
-/* 3-up on large desktop */
-@media (min-width: 1100px) {
-  .card { flex: 1 1 calc(33.333% - 14px); }
-}
-
-/* Card variant for "no posts" */
-.card.no-posts {
-  background: #fff3f3; border: 1px solid #e0b4b4; color: #a94442; text-align:center;
-}
-
-/* --------------------------------
-   7. Accessibility & interaction helpers
-   -------------------------------- */
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px; overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px); white-space: nowrap;
-}
-.cookie-banner, .toast { position: fixed; left: 12px; right:12px; bottom: 12px; z-index: 9999; }
-
-/* --------------------------------
-   8. Sidebar open overlay state (JS toggles body.sidebar-open)
-   -------------------------------- */
-body.sidebar-open {
-  overflow: hidden;
-}
-body.sidebar-open .sidebar-inner {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  right: 12px;
-  z-index: 1000;
-  max-height: calc(100vh - 24px);
-  overflow: auto;
-}
-
-/* --------------------------------
-   9. Small adjustments to match original design tokens
-   -------------------------------- */
-/* Header smaller typography adjustments for legacy rules */
-.header h1 { margin-bottom: 5px; font-size: 20px; }
-.header p { margin-top: 0; font-size: 13px; color: rgba(255,255,255,0.9); }
-
-/* Sidebar nav legacy look (desktop) */
+/* Legacy desktop sidebar look (keeps previous visual tokens) */
 .sidebar nav ul { list-style: none; padding: 0; margin: 0; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 3px; overflow: hidden; }
 .sidebar nav ul li a { display:block; padding:15px 20px; text-decoration:none; color:#333; transition: background-color 0.2s; border-bottom: 1px solid #e0e0e0; }
+.sidebar nav ul li:last-child a { border-bottom: none; }
 .sidebar nav ul li.active a { background-color: #d8e0e6; color: #2c3e50; font-weight:700; }
 .sidebar nav ul li:not(.active) a:hover { background-color: #f0f0f0; }
 
-/* Footer right nav inline item spacing (desktop fallback) */
-.footer-right nav ul { list-style:none; padding:0; margin:0; }
-.footer-right nav ul li { display:inline; margin-left:15px; }
-
-/* --------------------------------
-   End of stylesheet
-   -------------------------------- */
+/* Card variant for "no posts" */
+.card.no-posts { background: #fff3f3; border: 1px solid #e0b4b4; color: #a94442; text-align:center; padding: 1.5rem; border-radius: 8px; }
