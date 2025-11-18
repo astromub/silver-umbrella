@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>{{ page.title }} - {{ site.title }}</title>
 
@@ -24,7 +24,7 @@
   <header class="header">
     <div class="header-content">
       <button id="sidebarToggle" class="sidebar-toggle" aria-expanded="false" aria-controls="siteSidebar" aria-label="Open menu">☰</button>
-      <div>
+      <div class="header-brand">
         <h1 class="site-title">{{ site.title }}</h1>
         <p class="site-tagline">{{ site.description }}</p>
       </div>
@@ -73,6 +73,7 @@
       document.body.classList.toggle('sidebar-open', !isOpen);
     });
 
+    // close overlay on outside click for small screens
     document.addEventListener('click', function (e) {
       if (!document.body.classList.contains('sidebar-open')) return;
       if (window.innerWidth > 900) return;
@@ -97,6 +98,5 @@
     syncState();
   })();
   </script>
-
 </body>
 </html>
