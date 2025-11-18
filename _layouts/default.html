@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>{{ page.title }} - {{ site.title }}</title>
 
@@ -12,12 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-
-  {% if page.image %}
-    <meta property="og:image" content="{{ page.image | absolute_url }}">
-  {% else %}
-    <meta property="og:image" content="{{ site.social_image | absolute_url }}">
-  {% endif %}
+  <meta property="og:image" content="{{ page.image | default: site.social_image | absolute_url }}">
 </head>
 <body>
 
@@ -60,8 +55,8 @@
     var sidebar = document.getElementById('siteSidebar');
 
     function setAria(open) {
-      if (toggle) toggle.setAttribute('aria-expanded', open);
-      if (sidebar) sidebar.setAttribute('aria-hidden', !open);
+      toggle && toggle.setAttribute('aria-expanded', open);
+      sidebar && sidebar.setAttribute('aria-hidden', !open);
     }
 
     if (!toggle || !sidebar) return;
@@ -73,7 +68,6 @@
       document.body.classList.toggle('sidebar-open', !isOpen);
     });
 
-    // close overlay on outside click for small screens
     document.addEventListener('click', function (e) {
       if (!document.body.classList.contains('sidebar-open')) return;
       if (window.innerWidth > 900) return;
@@ -98,5 +92,6 @@
     syncState();
   })();
   </script>
+
 </body>
 </html>
