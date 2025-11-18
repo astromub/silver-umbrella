@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} - {{ site.title }}</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css"> 
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ page.title | default: site.title }}">
+    <meta property="og:url" content="{{ page.url | absolute_url }}">
+    
+    {% comment %}
+        Liquid check: 
+        1. Does the post have 'page.image' defined in its front matter? 
+        2. If not, use the 'site.social_image' we set in _config.yml.
+    {% endcomment %}
+    {% if page.image %}
+        <meta property="og:image" content="{{ page.image | absolute_url }}">
+    {% else %}
+        <meta property="og:image" content="{{ site.social_image | absolute_url }}">
+    {% endif %}
+
+    </head>
+<body>
+
+    <header class="header">
+        <div class="header-content"> 
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.description }}</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            {% include sidebar.html %}
+        </aside>
+
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
+
+    <div class="footer-wrapper">
+        <footer class="footer">
+            <div class="footer-left">
+                <p>Powered by <strong>{{ site.title }}</strong></p>
+            </div>
+            <div class="footer-right">
+                {% include footer_nav.html %}
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
