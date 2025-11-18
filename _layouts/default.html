@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>{{ page.title }} - {{ site.title }}</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
+  <link rel="icon" href="{{ site.baseurl | default: '/' }}favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="{{ site.baseurl | default: '/' }}assets/style.css">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
@@ -23,17 +23,15 @@
 
   <header class="header">
     <div class="header-content">
-      <div class="brand-row">
-        <button id="sidebarToggle" class="sidebar-toggle" aria-expanded="false" aria-controls="siteSidebar" aria-label="Open menu">☰</button>
-        <div>
-          <h1 class="site-title">{{ site.title }}</h1>
-          <p class="site-tagline">{{ site.description }}</p>
-        </div>
+      <button id="sidebarToggle" class="sidebar-toggle" aria-expanded="false" aria-controls="siteSidebar" aria-label="Open menu">☰</button>
+      <div>
+        <h1 class="site-title">{{ site.title }}</h1>
+        <p class="site-tagline">{{ site.description }}</p>
       </div>
     </div>
   </header>
 
-  <div class="container">
+  <div class="container container--cols">
     <aside id="siteSidebar" class="sidebar" role="complementary" aria-hidden="true">
       <div class="sidebar-inner">
         {% include sidebar.html %}
@@ -57,43 +55,48 @@
   </div>
 
   <script>
-    (function () {
-      var toggle = document.getElementById('sidebarToggle');
-      var sidebar = document.getElementById('siteSidebar');
+  (function () {
+    var toggle = document.getElementById('sidebarToggle');
+    var sidebar = document.getElementById('siteSidebar');
 
-      function setAria(open) {
-        toggle.setAttribute('aria-expanded', open);
-        sidebar.setAttribute('aria-hidden', !open);
+    function setAria(open) {
+      if (toggle) toggle.setAttribute('aria-expanded', open);
+      if (sidebar) sidebar.setAttribute('aria-hidden', !open);
+    }
+
+    if (!toggle || !sidebar) return;
+
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setAria(!isOpen);
+      document.body.classList.toggle('sidebar-open', !isOpen);
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!document.body.classList.contains('sidebar-open')) return;
+      if (window.innerWidth > 900) return;
+      if (!sidebar.contains(e.target) && e.target !== toggle) {
+        setAria(false);
+        document.body.classList.remove('sidebar-open');
       }
+    });
 
-      toggle.addEventListener('click', function () {
-        var open = toggle.getAttribute('aria-expanded') === 'true';
-        setAria(!open);
-        document.body.classList.toggle('sidebar-open', !open);
-      });
+    function syncState() {
+      if (window.innerWidth > 900) {
+        setAria(true);
+        document.body.classList.remove('sidebar-open');
+      } else {
+        setAria(false);
+        document.body.classList.remove('sidebar-open');
+      }
+    }
 
-      // Close sidebar when clicking outside on small screens
-      document.addEventListener('click', function (e) {
-        if (!document.body.classList.contains('sidebar-open')) return;
-        if (!sidebar.contains(e.target) && e.target !== toggle) {
-          setAria(false);
-          document.body.classList.remove('sidebar-open');
-        }
-      });
-
-      // ensure correct state on resize
-      window.addEventListener('resize', function () {
-        if (window.innerWidth > 900) {
-          setAria(true);
-          document.body.classList.remove('sidebar-open');
-        } else {
-          setAria(false);
-        }
-      });
-
-      // initial
-      if (window.innerWidth > 900) setAria(true);
-    })();
+    window.addEventListener('resize', syncState);
+    document.addEventListener('DOMContentLoaded', syncState);
+    syncState();
+  })();
   </script>
+
 </body>
 </html>
