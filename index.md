@@ -33,34 +33,34 @@ permalink: /
 
 ## 📱 Trade Anywhere With Our Mobile App
 
-<div class="mobile-app-promo">
-  <div class="app-features">
-    <h3>Mobile Trading Tracker</h3>
-    <p>Access your trading strategies and track performance directly from your mobile device.</p>
-    
-    <div class="feature-list">
-      <div class="feature">
-        <span class="feature-icon">📊</span>
-        <span>Real-time strategy tracking</span>
+<div class="card-grid">
+  <div class="card">
+    <a href="https://astronuri-trade-tracker.netlify.app/" target="_blank" class="card-link">
+      <h3>Mobile Trading Tracker</h3>
+      <p class="date">Always Available</p>
+      <p class="excerpt">Access your trading strategies and track performance directly from your mobile device with our optimized trading app.</p>
+      
+      <div class="mobile-features">
+        <div class="feature-item">
+          <span class="feature-icon">📊</span>
+          <span>Real-time strategy tracking</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">📱</span>
+          <span>Mobile-optimized interface</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">📚</span>
+          <span>Offline access to guides</span>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">🔔</span>
+          <span>Push notifications</span>
+        </div>
       </div>
-      <div class="feature">
-        <span class="feature-icon">📱</span>
-        <span>Mobile-optimized interface</span>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">📚</span>
-        <span>Offline access to guides</span>
-      </div>
-      <div class="feature">
-        <span class="feature-icon">🔔</span>
-        <span>Push notifications</span>
-      </div>
-    </div>
-    
-    <a href="https://astronuri-trade-tracker.netlify.app/" target="_blank" class="app-cta-button">
-      Open Mobile App
+      
+      <div class="app-note">Optimized for mobile browsers - No download required</div>
+      <span class="card-badge mobile">Mobile App</span>
     </a>
-    
-    <p class="app-note">Optimized for mobile browsers - No download required</p>
   </div>
 </div>
