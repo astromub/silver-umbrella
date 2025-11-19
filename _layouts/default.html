@@ -26,11 +26,11 @@
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="{{ '/' | relative_url }}" data-nav="home">Home</a></li>
-          <li><a href="{{ '/about' | relative_url }}" data-nav="about">About</a></li>
-          <li><a href="{{ '/trade-tracker' | relative_url }}" data-nav="trade-tracker">Trade Tracker</a></li>
-          <li><a href="{{ '/beginner-guide' | relative_url }}" data-nav="beginner-guide">Beginner Guide</a></li>
-          <li><a class="btn-services" href="{{ '/pricing' | relative_url }}" data-nav="pricing">Services</a></li>
+          <li><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+          <li><a href="{{ '/about' | relative_url }}" class="nav-link">About</a></li>
+          <li><a href="{{ '/trade-tracker' | relative_url }}" class="nav-link">Trade Tracker</a></li>
+          <li><a href="{{ '/beginner-guide' | relative_url }}" class="nav-link">Beginner Guide</a></li>
+          <li><a class="btn-services nav-link" href="{{ '/pricing' | relative_url }}">Services</a></li>
         </ul>
       </nav>
     </div>
@@ -45,11 +45,11 @@
       <div class="sidebar-inner">
         <nav>
           <ul>
-            <li><a href="{{ '/' | relative_url }}" data-nav="home">Home</a></li>
-            <li><a href="{{ '/about' | relative_url }}" data-nav="about">About</a></li>
-            <li><a href="{{ '/trade-tracker' | relative_url }}" data-nav="trade-tracker">Trade Tracker</a></li>
-            <li><a href="{{ '/beginner-guide' | relative_url }}" data-nav="beginner-guide">Beginner Guide</a></li>
-            <li><a href="{{ '/pricing' | relative_url }}" data-nav="pricing">Services</a></li>
+            <li><a href="{{ '/' | relative_url }}" class="sidebar-link">Home</a></li>
+            <li><a href="{{ '/about' | relative_url }}" class="sidebar-link">About</a></li>
+            <li><a href="{{ '/trade-tracker' | relative_url }}" class="sidebar-link">Trade Tracker</a></li>
+            <li><a href="{{ '/beginner-guide' | relative_url }}" class="sidebar-link">Beginner Guide</a></li>
+            <li><a href="{{ '/pricing' | relative_url }}" class="sidebar-link">Services</a></li>
           </ul>
         </nav>
         
@@ -112,32 +112,29 @@
         }
       });
 
-      // Add active class based on current page - FIXED VERSION
+      // Simple active navigation highlighting
       function setActiveNav() {
         var currentPath = window.location.pathname;
-        var navLinks = document.querySelectorAll('.site-nav a, .sidebar nav a');
+        var navLinks = document.querySelectorAll('.nav-link, .sidebar-link');
         
         // Remove all active classes first
         navLinks.forEach(function(link) {
           link.classList.remove('active');
         });
         
-        // Determine which page we're on
-        var activePage = 'home'; // default
-        
-        if (currentPath.includes('/about')) {
-          activePage = 'about';
-        } else if (currentPath.includes('/trade-tracker')) {
-          activePage = 'trade-tracker';
-        } else if (currentPath.includes('/beginner-guide')) {
-          activePage = 'beginner-guide';
-        } else if (currentPath.includes('/pricing') || currentPath.includes('/request_quote')) {
-          activePage = 'pricing';
-        }
-        
-        // Add active class to matching links
+        // Add active class to current page links
         navLinks.forEach(function(link) {
-          if (link.getAttribute('data-nav') === activePage) {
+          var linkPath = link.getAttribute('href');
+          // Handle exact matches and home page
+          if (linkPath === currentPath) {
+            link.classList.add('active');
+          }
+          // Handle subpages - if current path starts with link path (for nested pages)
+          else if (linkPath !== '/' && currentPath.startsWith(linkPath)) {
+            link.classList.add('active');
+          }
+          // Special case for home page
+          else if (currentPath === '/' && linkPath === '/') {
             link.classList.add('active');
           }
         });
