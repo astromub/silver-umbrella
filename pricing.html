@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ASTROMub — Plans & Pricing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f2fbff;
+      --card:#ffffff;
+      --accent:#bce7ff;
+      --accent-2:#66c2ff;
+      --muted:#5b6b78;
+      --brand:#0a74c2;
+      --danger:#ef4444;
+      --radius:12px;
+      --gap:16px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system; margin:0; background:var(--bg); color:#102027; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.45}
+    .wrap{max-width:var(--max); margin:28px auto; padding:18px}
+    header.site {
+      background: linear-gradient(180deg,var(--accent) 0%, rgba(102,194,255,0.06) 100%);
+      border-radius:14px; padding:22px; box-shadow: 0 6px 20px rgba(6,30,44,0.06); margin-bottom:20px;
+      display:flex; gap:16px; align-items:center;
+    }
+    .brand {
+      display:flex; flex-direction:column;
+    }
+    .brand h1{margin:0; font-size:1.15rem; color:var(--brand); font-weight:700}
+    .brand p{margin:6px 0 0; color:var(--muted); font-size:0.95rem}
+    .lead {
+      margin-top:10px; color:var(--muted); font-size:0.95rem; max-width:70ch;
+    }
+
+    nav.topnav { margin-top:12px; display:flex; gap:10px; flex-wrap:wrap; align-items:center }
+    nav.topnav a { text-decoration:none; color:var(--brand); background:transparent; padding:8px 12px; border-radius:10px; font-weight:600 }
+    nav.topnav a.active { background:var(--brand); color:#fff }
+
+    .grid { display:grid; grid-template-columns: 1fr; gap:18px; margin-top:22px }
+    @media(min-width:900px){ .grid{ grid-template-columns: 2fr 360px } }
+
+    .main { display:flex; flex-direction:column; gap:18px; }
+    .post { background:var(--card); border-radius:12px; padding:16px; box-shadow:0 6px 16px rgba(6,30,44,0.04); }
+    .post h2{margin:0 0 8px 0; font-size:1rem; color:var(--brand)}
+    .post p{margin:0;color:var(--muted)}
+
+    .cards { display:flex; flex-direction:column; gap:12px; margin-top:6px }
+    @media(min-width:720px){ .cards{ flex-direction:row } }
+    .card {
+      background:linear-gradient(180deg,#ffffff 0%, #fcfeff 100%);
+      border-radius:12px; padding:16px; box-shadow:0 8px 22px rgba(8,30,60,0.06);
+      border:1px solid rgba(10,116,194,0.06); flex:1; min-width:0;
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .card .price { font-size:1.1rem; color:var(--brand); font-weight:700 }
+    .card .meta { color:var(--muted); font-size:0.92rem }
+    .card ul { margin:0; padding-left:18px; color:var(--muted) }
+    .card .cta { margin-top:auto; display:flex; gap:10px; flex-wrap:wrap }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; cursor:pointer; padding:10px 14px; border-radius:10px; font-weight:600; text-decoration:none }
+    .btn-primary { background:linear-gradient(180deg,var(--accent-2), #0f93ff); color:#fff }
+    .btn-ghost { background:transparent; color:var(--brand); border:1px solid rgba(10,116,194,0.08) }
+    .btn-small { font-size:0.88rem; padding:8px 10px; border-radius:8px }
+
+    aside.side { background:var(--card); border-radius:12px; padding:16px; box-shadow:0 6px 18px rgba(6,30,44,0.04) }
+    .side h3{margin:0 0 8px 0; color:var(--brand)}
+    .side p{margin:0 0 12px 0; color:var(--muted); font-size:0.95rem}
+    .feature { display:flex; gap:10px; align-items:flex-start; margin-bottom:10px }
+    .dot { width:10px; height:10px; border-radius:50%; background:var(--accent-2); margin-top:6px }
+
+    footer.sitefoot { margin-top:18px; color:var(--muted); font-size:0.9rem; text-align:center }
+    .ribbon { background:linear-gradient(90deg,#fff 0%, rgba(102,194,255,0.14) 100%); padding:10px; border-radius:10px; display:inline-block; color:var(--brand); font-weight:700; font-size:0.92rem }
+    .muted { color:var(--muted); font-size:0.9rem }
+    .kicker { color:#0a74c2; font-weight:700; font-size:0.86rem }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site">
+      <div style="flex:1">
+        <div class="brand">
+          <h1>ASTROMub Limited</h1>
+          <p>Create your online presence with a free, fully-customizable GitHub Pages site — fast, affordable, and built so you can maintain it yourself.</p>
+        </div>
+
+        <div class="lead muted">I’ll help you get a clean, mobile-friendly site on GitHub Pages — from repo setup to deployment and a short training so you keep full control.</div>
+
+        <nav class="topnav" aria-label="Primary">
+          <a class="active" href="https://astromub.github.io/">Home</a>
+          <a href="https://astromub.github.io/about.html">About</a>
+          <a href="https://astromub.github.io/trade-tracker.html">Trade Tracker</a>
+          <a href="https://astromub.github.io/beginner-guide.html">Beginner Guide</a>
+        </nav>
+      </div>
+
+      <div style="min-width:160px; text-align:right">
+        <div class="ribbon">Affordable Web Launch</div>
+        <div style="margin-top:8px" class="muted">Easy. Fast. Yours.</div>
+      </div>
+    </header>
+
+    <div class="grid">
+
+      <!-- main column -->
+      <div class="main">
+
+        <article class="post">
+          <h2>Plans & Pricing</h2>
+          <p class="muted">Simple, human pricing so small business owners can get online. Pick a plan — or start with a free quick help session. Below are starter packages delivered with a short teaching session so you keep control.</p>
+
+          <div class="cards" style="margin-top:14px">
+
+            <section class="card">
+              <div>
+                <div class="kicker">Coffee Plan</div>
+                <div class="price">Buy me a coffee · ₱150</div>
+                <div class="meta">Single-page launch — Home + Contact. 30-minute walkthrough.</div>
+              </div>
+
+              <ul>
+                <li>Branded header & footer</li>
+                <li>Hero section + contact link</li>
+                <li>Quick GitHub web UI walkthrough</li>
+              </ul>
+
+              <div class="cta">
+                <a class="btn btn-primary" href="https://astromub.github.io/#coffee">Get Coffee Plan</a>
+                <a class="btn btn-ghost" href="https://astromub.github.io/beginner-guide.html#free-help">Free Quick Help</a>
+              </div>
+            </section>
+
+            <section class="card">
+              <div>
+                <div class="kicker">Starter Site</div>
+                <div class="price">₱3,000 · Multi-page</div>
+                <div class="meta">Home, About, Services, Contact + 60-minute training.</div>
+              </div>
+
+              <ul>
+                <li>Mobile-first CSS & sidebar nav</li>
+                <li>README and recorded walkthrough</li>
+                <li>One follow-up Q&amp;A (30 minutes)</li>
+              </ul>
+
+              <div class="cta">
+                <a class="btn btn-primary" href="https://astromub.github.io/#starter">Request Starter</a>
+                <a class="btn btn-ghost" href="https://astromub.github.io/about.html">View Samples</a>
+              </div>
+            </section>
+
+            <section class="card">
+              <div>
+                <div class="kicker">Growth Pack</div>
+                <div class="price">₱14,000 · Full site</div>
+                <div class="meta">Blog/News, image optimization, Trade Tracker demo page scaffold.</div>
+              </div>
+
+              <ul>
+                <li>90-minute training + 1 week support</li>
+                <li>Performance and SEO basics</li>
+                <li>Content & image optimization</li>
+              </ul>
+
+              <div class="cta">
+                <a class="btn btn-primary" href="https://astromub.github.io/#growth">Start Growth Pack</a>
+                <a class="btn btn-ghost" href="https://astromub.github.io/trade-tracker.html">See Trade Tracker</a>
+              </div>
+            </section>
+
+          </div> <!-- cards -->
+
+        </article>
+
+        <article class="post">
+          <h2>Build-My-Tracker — Custom Quote</h2>
+          <p class="muted">If you want a working Trade Tracker like ASTRONuRi — session tracking, logging, CSV export, and analytics — we'll scope features and deliver in staged releases. Perfect for advanced use-cases and revenue-generating tools.</p>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://astromub.github.io/#quote">Request Quote</a>
+            <a class="btn btn-ghost" href="https://astromub.github.io/#scope">Schedule a Scoping Call</a>
+          </div>
+        </article>
+
+        <article class="post">
+          <h2>Free Help & Samples</h2>
+          <p class="muted">I offer a free 15-minute help session for one focused issue (fix mobile button size, make a sidebar visible, or help commit a change). I also provide a free resource pack with default layout and mobile patch you can use immediately.</p>
+
+          <div style="margin-top:10px">
+            <a class="btn btn-ghost btn-small" href="https://astromub.github.io/beginner-guide.html#free-help">Book Free 15-min Help</a>
+            <a class="btn btn-ghost btn-small" href="https://astromub.github.io/#resources">Download Starter Pack</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- sidebar column -->
+      <aside class="side">
+        <h3>Why GitHub Pages?</h3>
+        <p class="muted">Free hosting, full control, versioned content. Great for small businesses who want ownership and low ongoing costs.</p>
+
+        <div class="feature"><div class="dot"></div><div><strong>Fast setup</strong><div class="muted">Go live in a day.</div></div></div>
+        <div class="feature"><div class="dot"></div><div><strong>Mobile-first</strong><div class="muted">Modern responsive templates included.</div></div></div>
+        <div class="feature"><div class="dot"></div><div><strong>Maintainable</strong><div class="muted">Learn to edit via GitHub web UI or Git client.</div></div></div>
+
+        <hr style="border:none;border-top:1px solid rgba(10,116,194,0.06); margin:12px 0">
+
+        <h3>Example: ASTRONuRi Trade Tracker</h3>
+        <p class="muted">A demo scaffold showing session cards for parameters, trade details, and session status. Built mobile-first so cards stack cleanly on phones.</p>
+
+        <div style="display:flex; gap:8px; margin-top:10px">
+          <a class="btn btn-primary" href="https://astromub.github.io/trade-tracker.html">View Demo</a>
+          <a class="btn btn-ghost" href="https://astromub.github.io/beginner-guide.html">Learn More</a>
+        </div>
+      </aside>
+
+    </div> <!-- grid -->
+
+    <footer class="sitefoot">
+      <div>Powered by ASTROMub Limited · Want to start? Reply "Coffee Plan" + GitHub username</div>
+    </footer>
+
+  </div>
+</body>
+</html>
