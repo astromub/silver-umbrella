@@ -1,9 +1,8 @@
 title: ASTROMub Limited
-description: Home of ASTRONuRi Trade Tracker for binary trading. A risk management system for profitable trade
+description: Create your office presence with a free, fully-customizable GitHub Pages site — fast and maintainable.
 theme: null
-baseurl: "/silver-umbrella"
+baseurl: /silver-umbrella
 markdown: kramdown
 # --- Social Sharing Image Defaults ---
 social_image: /images/coverlogo.png
 url: "https://astromub.github.io"
-
