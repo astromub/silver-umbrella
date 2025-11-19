@@ -5,7 +5,7 @@
   --accent: #66c2ff;
   --muted: #5b6b78;
   --radius: 12px;
-  --max-width: 1400px; /* Increased from 1200px */
+  --max-width: 1400px;
   --gap: 24px;
 }
 
@@ -40,15 +40,15 @@ body{
 .site-title{
   margin:0;
   color:var(--brand);
-  font-size:1.7rem; /* Slightly larger */
+  font-size:1.7rem;
   font-weight:700;
   letter-spacing:-0.02em;
 }
 .site-tagline{
   margin:8px 0 0;
   color:var(--muted);
-  font-size:1.05rem; /* Slightly larger */
-  max-width:700px; /* Wider description */
+  font-size:1.05rem;
+  max-width:700px;
   line-height:1.5;
 }
 
@@ -70,7 +70,7 @@ body{
 .site-nav{display:block}
 .site-nav ul{
   display:flex;
-  gap:16px; /* More spacing between nav items */
+  gap:16px;
   align-items:center;
   margin:0;
   padding:0;
@@ -79,10 +79,10 @@ body{
 .site-nav a{
   color:var(--brand);
   text-decoration:none;
-  padding:12px 18px; /* Larger click area */
+  padding:12px 18px;
   border-radius:10px;
   font-weight:600;
-  font-size:1rem; /* Slightly larger font */
+  font-size:1rem;
   transition:all 0.2s;
   white-space:nowrap;
 }
@@ -90,47 +90,48 @@ body{
   background:rgba(102,194,255,0.1);
   transform:translateY(-1px);
 }
-.site-nav .btn-pricing{
+/* Changed from .btn-pricing to .btn-services */
+.site-nav .btn-services{
   background:linear-gradient(135deg, var(--accent), #0f93ff);
   color:#fff;
-  padding:12px 24px; /* Larger button */
+  padding:12px 24px;
   border-radius:12px;
   box-shadow:0 4px 16px rgba(6,30,44,0.15);
   transition:all 0.2s;
   font-weight:700;
 }
-.site-nav .btn-pricing:hover{
+.site-nav .btn-services:hover{
   transform:translateY(-2px);
   box-shadow:0 8px 25px rgba(6,30,44,0.25);
   background:linear-gradient(135deg, #0f93ff, var(--accent));
 }
 
-/* Main Container - WIDER LAYOUT */
+/* Main Container */
 .container{
   max-width:var(--max-width);
-  margin:50px auto; /* More vertical spacing */
+  margin:50px auto;
   padding:0 24px;
   display:grid;
-  grid-template-columns: 1fr 320px; /* Wider sidebar */
-  gap:50px; /* More spacing between main and sidebar */
+  grid-template-columns: 1fr 320px;
+  gap:50px;
   align-items:start;
 }
 
-/* Content Area - WIDER */
+/* Content Area */
 .content{
   min-height:400px;
   width:100%;
 }
 
-/* Sidebar - WIDER */
+/* Sidebar */
 .sidebar-inner{
   background:var(--surface);
-  padding:28px; /* More padding */
-  border-radius:18px; /* Larger radius */
-  box-shadow:0 10px 40px rgba(6,30,44,0.1); /* Deeper shadow */
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 10px 40px rgba(6,30,44,0.1);
   border:1px solid rgba(10,116,194,0.1);
   position:sticky;
-  top:120px; /* Adjusted for larger header */
+  top:120px;
 }
 .sidebar nav ul{
   list-style:none;
@@ -142,20 +143,20 @@ body{
 }
 .sidebar nav ul li a{
   display:block;
-  padding:14px 18px; /* Larger touch targets */
+  padding:14px 18px;
   color:#102027;
   text-decoration:none;
   border-radius:12px;
   border:1px solid rgba(10,116,194,0.1);
   background:rgba(102,194,255,0.05);
   transition:all 0.2s;
-  font-weight:600; /* Bolder font */
+  font-weight:600;
   font-size:1rem;
 }
 .sidebar nav ul li a:hover{
   background:rgba(102,194,255,0.15);
   border-color:var(--accent);
-  transform:translateX(6px); /* More noticeable hover effect */
+  transform:translateX(6px);
 }
 .sidebar-section{
   border-top:1px solid rgba(10,116,194,0.15);
@@ -164,7 +165,7 @@ body{
 .sidebar-section h3{
   margin:0 0 18px 0;
   color:var(--brand);
-  font-size:1.2rem; /* Larger section headings */
+  font-size:1.2rem;
   font-weight:700;
 }
 .sidebar-section ul{
@@ -191,24 +192,24 @@ body{
   transform:translateX(4px);
 }
 
-/* Cards - WIDER AND BETTER GRID */
+/* Cards */
 .card-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(380px, 1fr)); /* Wider cards */
-  gap:30px; /* More spacing between cards */
+  grid-template-columns:repeat(auto-fit, minmax(380px, 1fr));
+  gap:30px;
   margin-top:10px;
 }
 .card{
   background:var(--surface);
-  border-radius:18px; /* Larger radius */
-  padding:28px; /* More padding */
-  box-shadow:0 10px 40px rgba(6,30,44,0.1); /* Deeper shadow */
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 10px 40px rgba(6,30,44,0.1);
   border:1px solid rgba(10,116,194,0.1);
   transition:all 0.3s ease;
   height:100%;
 }
 .card:hover{
-  transform:translateY(-6px); /* More lift on hover */
+  transform:translateY(-6px);
   box-shadow:0 16px 50px rgba(6,30,44,0.15);
   border-color:rgba(102,194,255,0.4);
 }
@@ -221,7 +222,7 @@ body{
 .card h3{
   margin:0 0 14px 0;
   color:var(--brand);
-  font-size:1.4rem; /* Larger titles */
+  font-size:1.4rem;
   font-weight:700;
   line-height:1.3;
 }
@@ -233,13 +234,13 @@ body{
 }
 .card .excerpt{
   color:var(--muted);
-  line-height:1.6; /* Better line height */
+  line-height:1.6;
   margin:0;
   font-size:1rem;
 }
 .no-posts{
   text-align:center;
-  padding:80px 28px; /* More padding */
+  padding:80px 28px;
   grid-column:1/-1;
 }
 .no-posts h3{
@@ -250,8 +251,8 @@ body{
 
 /* Footer */
 .site-footer{
-  margin-top:100px; /* More spacing */
-  padding:50px 0; /* More padding */
+  margin-top:100px;
+  padding:50px 0;
   background:linear-gradient(180deg, rgba(102,194,255,0.1), rgba(255,255,255,0.03));
   border-top:1px solid rgba(10,116,194,0.15);
 }
@@ -272,7 +273,7 @@ body{
 }
 .footer-right ul{
   display:flex;
-  gap:24px; /* More spacing */
+  gap:24px;
   margin:0;
   padding:0;
   list-style:none;
@@ -280,7 +281,7 @@ body{
 .footer-right a{
   color:var(--muted);
   text-decoration:none;
-  font-size:1rem; /* Slightly larger */
+  font-size:1rem;
   transition:color 0.2s;
   font-weight:500;
 }
@@ -311,7 +312,7 @@ body{
   }
   .site-nav{
     display:none;
-    position:fixed; /* Changed to fixed for mobile */
+    position:fixed;
     top:0;
     left:0;
     right:0;
@@ -334,27 +335,15 @@ body{
   .site-nav ul li a{
     display:block;
     text-align:center;
-    padding:18px 20px; /* Larger touch targets */
+    padding:18px 20px;
     font-size:1.1rem;
     border:1px solid rgba(10,116,194,0.1);
     border-radius:12px;
   }
-  .site-nav .btn-pricing{
+  .site-nav .btn-services{
     margin-top:10px;
     padding:18px 20px;
     font-size:1.1rem;
-  }
-  
-  /* Close button for mobile nav */
-  .nav-close{
-    position:absolute;
-    top:20px;
-    right:20px;
-    background:none;
-    border:none;
-    font-size:24px;
-    color:var(--muted);
-    cursor:pointer;
   }
   
   .container{
@@ -454,13 +443,13 @@ body{
   }
 }
 
-/* Content Typography - Better for wider layout */
+/* Content Typography */
 .content h2{
   color:var(--brand);
   margin-top:2.5rem;
   margin-bottom:1.2rem;
   font-weight:700;
-  font-size:2rem; /* Larger headings */
+  font-size:2rem;
 }
 .content h3{
   color:var(--muted);
