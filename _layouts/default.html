@@ -25,13 +25,12 @@
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">☰</button>
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
-        <button class="nav-close" aria-label="Close navigation">✕</button>
         <ul>
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
           <li><a href="{{ '/about' | relative_url }}">About</a></li>
           <li><a href="{{ '/trade-tracker' | relative_url }}">Trade Tracker</a></li>
           <li><a href="{{ '/beginner-guide' | relative_url }}">Beginner Guide</a></li>
-          <li><a class="btn-pricing" href="{{ '/pricing' | relative_url }}">Pricing</a></li>
+          <li><a class="btn-services" href="{{ '/pricing' | relative_url }}">Services</a></li>
         </ul>
       </nav>
     </div>
@@ -50,7 +49,7 @@
             <li><a href="{{ '/about' | relative_url }}">About</a></li>
             <li><a href="{{ '/trade-tracker' | relative_url }}">Trade Tracker</a></li>
             <li><a href="{{ '/beginner-guide' | relative_url }}">Beginner Guide</a></li>
-            <li><a href="{{ '/pricing' | relative_url }}">Pricing</a></li>
+            <li><a href="{{ '/pricing' | relative_url }}">Services</a></li>
           </ul>
         </nav>
         
@@ -87,7 +86,6 @@
     (function(){
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('siteNav');
-      var closeBtn = document.querySelector('.nav-close');
 
       function setOpen(open){
         toggle && toggle.setAttribute('aria-expanded', open);
@@ -101,11 +99,6 @@
         e.preventDefault();
         var isOpen = toggle.getAttribute('aria-expanded') === 'true';
         setOpen(!isOpen);
-      });
-
-      closeBtn && closeBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        setOpen(false);
       });
 
       window.addEventListener('resize', function(){
