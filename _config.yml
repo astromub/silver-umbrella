@@ -1,8 +1,7 @@
-title: ASTROMub Limited
-description: ASTRONuRi Trade Tracker All-in-One Risk Management and Website Builder. Maximize Profit, Minimize Cost.
-theme: null
-baseurl: /silver-umbrella
+title: "ASTROMub Limited"
+description: "ASTRONuRi Trade Tracker All-in-One Risk Management and Website Builder. Maximize Profit, Minimize Cost."
+theme: jekyll-theme-minimal
+baseurl: "/silver-umbrella"
 markdown: kramdown
-# --- Social Sharing Image Defaults ---
-social_image: /images/coverlogo.png
+social_image: "/images/coverlogo.png"
 url: "https://astromub.github.io"
