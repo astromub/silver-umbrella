@@ -1,8 +1,10 @@
 ---
-title: "Trade Strategy #3: Candlestick Basics for Binary Traders"
-date: 2025-11-07
 layout: post
-categories: beginner
+title: "Trade Strategy #3: Candlestick Basics for Binary Traders"
+date: 2025-11-08
+categories: [beginner]
+description: "Master the fundamentals of candlestick patterns and how to apply them effectively in binary options trading."
+excerpt: "Learn essential candlestick patterns and their application in binary options trading for better market analysis."
 tags: [candlestick, binary, support resistance, bullish, bearish]
 image: /images/coverlogo.png
 ---
