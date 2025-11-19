@@ -1191,3 +1191,22 @@ body{
     padding: 22px;
   }
 }
+
+/* Active navigation states - SIMPLE FIX */
+.site-nav a.active:not(.btn-services) {
+  background: rgba(102,194,255,0.15) !important;
+  color: var(--brand) !important;
+  font-weight: 700 !important;
+}
+
+.site-nav .btn-services.active {
+  background: linear-gradient(135deg, #0f93ff, var(--accent)) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(6,30,44,0.2) !important;
+}
+
+.sidebar nav a.active {
+  background: rgba(102,194,255,0.15) !important;
+  font-weight: 700 !important;
+  border-color: var(--accent) !important;
+}
