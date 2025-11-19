@@ -26,11 +26,11 @@
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/about' | relative_url }}">About</a></li>
-          <li><a href="{{ '/trade-tracker' | relative_url }}">Trade Tracker</a></li>
-          <li><a href="{{ '/beginner-guide' | relative_url }}">Beginner Guide</a></li>
-          <li><a class="btn-services" href="{{ '/pricing' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
+          <li><a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+          <li><a href="{{ '/trade-tracker' | relative_url }}" class="{% if page.url contains '/trade-tracker' %}active{% endif %}">Trade Tracker</a></li>
+          <li><a href="{{ '/beginner-guide' | relative_url }}" class="{% if page.url contains '/beginner-guide' %}active{% endif %}">Beginner Guide</a></li>
+          <li><a class="btn-services {% if page.url contains '/pricing' %}active{% endif %}" href="{{ '/pricing' | relative_url }}">Services</a></li>
         </ul>
       </nav>
     </div>
@@ -45,11 +45,11 @@
       <div class="sidebar-inner">
         <nav>
           <ul>
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/about' | relative_url }}">About</a></li>
-            <li><a href="{{ '/trade-tracker' | relative_url }}">Trade Tracker</a></li>
-            <li><a href="{{ '/beginner-guide' | relative_url }}">Beginner Guide</a></li>
-            <li><a href="{{ '/pricing' | relative_url }}">Services</a></li>
+            <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
+            <li><a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
+            <li><a href="{{ '/trade-tracker' | relative_url }}" class="{% if page.url contains '/trade-tracker' %}active{% endif %}">Trade Tracker</a></li>
+            <li><a href="{{ '/beginner-guide' | relative_url }}" class="{% if page.url contains '/beginner-guide' %}active{% endif %}">Beginner Guide</a></li>
+            <li><a href="{{ '/pricing' | relative_url }}" class="{% if page.url contains '/pricing' %}active{% endif %}">Services</a></li>
           </ul>
         </nav>
         
@@ -74,7 +74,7 @@
           <ul>
             <li><a href="{{ '/about' | relative_url }}">About</a></li>
             <li><a href="{{ '/trade-tracker' | relative_url }}">Trade Tracker</a></li>
-            <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
+            <li><a href="{{ '/request_quote' | relative_url }}">Contact</a></li>
             <li><a href="{{ '/#privacy' | relative_url }}">Privacy Policy</a></li>
           </ul>
         </nav>
@@ -111,6 +111,26 @@
           setOpen(false);
         }
       });
+
+      // Add active class based on current page
+      function setActiveNav() {
+        var currentPath = window.location.pathname;
+        var navLinks = document.querySelectorAll('.site-nav a, .sidebar nav a');
+        
+        navLinks.forEach(function(link) {
+          var linkPath = link.getAttribute('href');
+          if (linkPath === currentPath || 
+              (currentPath.includes(linkPath) && linkPath !== '/') ||
+              (currentPath === '/' && linkPath === '/')) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      // Set active nav on page load
+      setActiveNav();
     })();
   </script>
 </body>
