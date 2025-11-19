@@ -6,8 +6,8 @@
   <title>{{ page.title | default: site.title }}</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="{{ site.baseurl }}favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="{{ site.baseurl}}/assets/style.css">
+  <link rel="icon" href="{{ site.baseurl | default: '/' }}favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="{{ site.baseurl | default: '/' }}assets/style.css">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ page.title | default: site.title }}">
@@ -26,11 +26,11 @@
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="{{ site.baseurl }}">Home</a></li>
-          <li><a href="{{ site.baseurl }}about.html">About</a></li>
-          <li><a href="{{ site.baseurl }}trade-tracker.html">Trade Tracker</a></li>
-          <li><a href="{{ site.baseurl }}beginner-guide.html">Beginner Guide</a></li>
-          <li><a class="btn-pricing" href="{{ site.baseurl }}pricing.html">Pricing</a></li>
+          <li><a href="{{ site.baseurl | default: '/' }}">Home</a></li>
+          <li><a href="{{ site.baseurl | default: '/' }}about.html">About</a></li>
+          <li><a href="{{ site.baseurl | default: '/' }}trade-tracker.html">Trade Tracker</a></li>
+          <li><a href="{{ site.baseurl | default: '/' }}beginner-guide.html">Beginner Guide</a></li>
+          <li><a class="btn-pricing" href="{{ site.baseurl | default: '/' }}pricing.html">Pricing</a></li>
         </ul>
       </nav>
     </div>
@@ -54,10 +54,10 @@
       <div class="footer-right">
         <nav aria-label="Footer">
           <ul>
-            <li><a href="{{ site.baseurl }}about.html">About</a></li>
-            <li><a href="{{ site.baseurl }}trade-tracker.html">Trade Tracker</a></li>
-            <li><a href="{{ site.baseurl }}#contact">Contact</a></li>
-            <li><a href="{{ site.baseurl }}#privacy">Privacy Policy</a></li>
+            <li><a href="{{ site.baseurl | default: '/' }}about.html">About</a></li>
+            <li><a href="{{ site.baseurl | default: '/' }}trade-tracker.html">Trade Tracker</a></li>
+            <li><a href="{{ site.baseurl | default: '/' }}#contact">Contact</a></li>
+            <li><a href="{{ site.baseurl | default: '/' }}#privacy">Privacy Policy</a></li>
           </ul>
         </nav>
       </div>
