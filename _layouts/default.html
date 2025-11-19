@@ -26,11 +26,11 @@
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
         <ul>
-          <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-          <li><a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
-          <li><a href="{{ '/trade-tracker' | relative_url }}" class="{% if page.url contains '/trade-tracker' %}active{% endif %}">Trade Tracker</a></li>
-          <li><a href="{{ '/beginner-guide' | relative_url }}" class="{% if page.url contains '/beginner-guide' %}active{% endif %}">Beginner Guide</a></li>
-          <li><a class="btn-services {% if page.url contains '/pricing' %}active{% endif %}" href="{{ '/pricing' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/' | relative_url }}" data-nav="home">Home</a></li>
+          <li><a href="{{ '/about' | relative_url }}" data-nav="about">About</a></li>
+          <li><a href="{{ '/trade-tracker' | relative_url }}" data-nav="trade-tracker">Trade Tracker</a></li>
+          <li><a href="{{ '/beginner-guide' | relative_url }}" data-nav="beginner-guide">Beginner Guide</a></li>
+          <li><a class="btn-services" href="{{ '/pricing' | relative_url }}" data-nav="pricing">Services</a></li>
         </ul>
       </nav>
     </div>
@@ -45,11 +45,11 @@
       <div class="sidebar-inner">
         <nav>
           <ul>
-            <li><a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">Home</a></li>
-            <li><a href="{{ '/about' | relative_url }}" class="{% if page.url contains '/about' %}active{% endif %}">About</a></li>
-            <li><a href="{{ '/trade-tracker' | relative_url }}" class="{% if page.url contains '/trade-tracker' %}active{% endif %}">Trade Tracker</a></li>
-            <li><a href="{{ '/beginner-guide' | relative_url }}" class="{% if page.url contains '/beginner-guide' %}active{% endif %}">Beginner Guide</a></li>
-            <li><a href="{{ '/pricing' | relative_url }}" class="{% if page.url contains '/pricing' %}active{% endif %}">Services</a></li>
+            <li><a href="{{ '/' | relative_url }}" data-nav="home">Home</a></li>
+            <li><a href="{{ '/about' | relative_url }}" data-nav="about">About</a></li>
+            <li><a href="{{ '/trade-tracker' | relative_url }}" data-nav="trade-tracker">Trade Tracker</a></li>
+            <li><a href="{{ '/beginner-guide' | relative_url }}" data-nav="beginner-guide">Beginner Guide</a></li>
+            <li><a href="{{ '/pricing' | relative_url }}" data-nav="pricing">Services</a></li>
           </ul>
         </nav>
         
@@ -112,19 +112,33 @@
         }
       });
 
-      // Add active class based on current page
+      // Add active class based on current page - FIXED VERSION
       function setActiveNav() {
         var currentPath = window.location.pathname;
         var navLinks = document.querySelectorAll('.site-nav a, .sidebar nav a');
         
+        // Remove all active classes first
         navLinks.forEach(function(link) {
-          var linkPath = link.getAttribute('href');
-          if (linkPath === currentPath || 
-              (currentPath.includes(linkPath) && linkPath !== '/') ||
-              (currentPath === '/' && linkPath === '/')) {
+          link.classList.remove('active');
+        });
+        
+        // Determine which page we're on
+        var activePage = 'home'; // default
+        
+        if (currentPath.includes('/about')) {
+          activePage = 'about';
+        } else if (currentPath.includes('/trade-tracker')) {
+          activePage = 'trade-tracker';
+        } else if (currentPath.includes('/beginner-guide')) {
+          activePage = 'beginner-guide';
+        } else if (currentPath.includes('/pricing') || currentPath.includes('/request_quote')) {
+          activePage = 'pricing';
+        }
+        
+        // Add active class to matching links
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('data-nav') === activePage) {
             link.classList.add('active');
-          } else {
-            link.classList.remove('active');
           }
         });
       }
