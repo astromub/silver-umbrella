@@ -4,7 +4,7 @@ title: Home
 permalink: /
 ---
 
-## 📌 Latest
+## 📌 Latest 
 
 <div class="card-grid">
   {% if site.posts.size > 0 %}
@@ -12,8 +12,13 @@ permalink: /
       <div class="card">
         <a href="{{ post.url | relative_url }}" class="card-link">
           <h3>{{ post.title }}</h3>
-          <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+          <p class="date">{{ post.date | date: "%B %d, %Y" }}</p>
           <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
+          {% if post.categories contains 'beginner' %}
+            <span class="card-badge beginner">Beginner</span>
+          {% elsif post.categories contains 'strategy' %}
+            <span class="card-badge strategy">Strategy</span>
+          {% endif %}
         </a>
       </div>
     {% endfor %}
