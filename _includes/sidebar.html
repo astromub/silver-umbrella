@@ -1,13 +1,5 @@
-<aside class="sidebar">
-    <nav>
-        <ul>
-            <li{% if page.url == '/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/">Home</a></li> 
-            
-            <li{% if page.url == '/about/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/about/">About</a></li>
-            
-            <li{% if page.url == '/trade-tracker/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/trade-tracker/">Trade Tracker</a></li>
-            
-            <li{% if page.url == '/beginner-guide/' %} class="active"{% endif %}><a href="{{ site.baseurl }}/beginner-guide/">Beginner Guide</a></li>
-        </ul>
-    </nav>
-</aside>
+<a href="{{ site.baseurl | default: '/' }}/">Home</a>
+<a href="{{ site.baseurl | default: '/' }}/about.html">About</a>
+<a href="{{ site.baseurl | default: '/' }}/trade-tracker/">Trade Tracker</a>
+<a href="{{ site.baseurl | default: '/' }}/beginner-guide/">Beginner Guide</a>
+<a href="{{ site.baseurl | default: '/' }}/pricing.html">Pricing</a>
