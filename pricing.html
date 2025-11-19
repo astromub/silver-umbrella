@@ -40,8 +40,8 @@ permalink: /pricing.html
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-primary" href="{{ '/' | relative_url }}#coffee">Get Coffee Plan</a>
-              <a class="btn btn-ghost" href="{{ '/beginner-guide' | relative_url }}#free-help">Free Quick Help</a>
+              <a class="btn btn-primary" href="{{ '/request_quote' | relative_url }}?plan=coffee">Get Coffee Plan</a>
+              <span class="btn btn-ghost disabled">Free Quick Help</span>
             </div>
           </section>
 
@@ -59,8 +59,8 @@ permalink: /pricing.html
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-primary" href="{{ '/' | relative_url }}#starter">Request Starter</a>
-              <a class="btn btn-ghost" href="{{ '/about' | relative_url }}">View Samples</a>
+              <a class="btn btn-primary" href="{{ '/request_quote' | relative_url }}?plan=starter">Request Starter</a>
+              <span class="btn btn-ghost disabled">View Samples</span>
             </div>
           </section>
 
@@ -78,7 +78,7 @@ permalink: /pricing.html
             </ul>
 
             <div class="card-actions">
-              <a class="btn btn-primary" href="{{ '/' | relative_url }}#growth">Start Growth Pack</a>
+              <a class="btn btn-primary" href="{{ '/request_quote' | relative_url }}?plan=growth">Start Growth Pack</a>
               <a class="btn btn-ghost" href="{{ '/trade-tracker' | relative_url }}">See Trade Tracker</a>
             </div>
           </section>
@@ -90,8 +90,8 @@ permalink: /pricing.html
         <p class="pricing-description">If you want a working Trade Tracker like ASTRONuRi — session tracking, logging, CSV export, and analytics — we'll scope features and deliver in staged releases. Perfect for advanced use-cases and revenue-generating tools.</p>
 
         <div class="pricing-actions">
-          <a class="btn btn-primary" href="{{ '/' | relative_url }}#quote">Request Quote</a>
-          <a class="btn btn-ghost" href="{{ '/' | relative_url }}#scope">Schedule a Scoping Call</a>
+          <a class="btn btn-primary" href="{{ '/request_quote' | relative_url }}?plan=custom">Request Quote</a>
+          <span class="btn btn-ghost disabled">Schedule a Scoping Call</span>
         </div>
       </article>
 
@@ -100,8 +100,8 @@ permalink: /pricing.html
         <p class="pricing-description">I offer a free 15-minute help session for one focused issue (fix mobile button size, make a sidebar visible, or help commit a change). I also provide a free resource pack with default layout and mobile patch you can use immediately.</p>
 
         <div class="pricing-help">
-          <a class="btn btn-ghost" href="{{ '/beginner-guide' | relative_url }}#free-help">Book Free 15-min Help</a>
-          <a class="btn btn-ghost" href="{{ '/' | relative_url }}#resources">Download Starter Pack</a>
+          <span class="btn btn-ghost disabled">Book Free 15-min Help</span>
+          <span class="btn btn-ghost disabled">Download Starter Pack</span>
         </div>
       </article>
     </div>
@@ -143,7 +143,7 @@ permalink: /pricing.html
         
         <div class="sidebar-actions">
           <a class="btn btn-primary" href="{{ '/trade-tracker' | relative_url }}">View Demo</a>
-          <a class="btn btn-ghost" href="{{ '/beginner-guide' | relative_url }}">Learn More</a>
+          <span class="btn btn-ghost disabled">Learn More</span>
         </div>
       </div>
 
@@ -160,7 +160,7 @@ permalink: /pricing.html
         </ul>
         
         <div class="highlight-actions">
-          <a class="btn btn-primary" href="{{ '/' | relative_url }}#growth">Start Growth Pack</a>
+          <a class="btn btn-primary" href="{{ '/request_quote' | relative_url }}?plan=growth">Start Growth Pack</a>
           <a class="btn btn-ghost" href="{{ '/trade-tracker' | relative_url }}">See Trade Tracker</a>
         </div>
       </div>
@@ -169,6 +169,14 @@ permalink: /pricing.html
 </div>
 
 <style>
+/* Add disabled button style */
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Rest of the pricing styles remain the same as previous version */
 .pricing-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -266,7 +274,6 @@ permalink: /pricing.html
   font-size: 1.05rem;
 }
 
-/* Pricing Cards Grid - FIXED ALIGNMENT */
 .pricing-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -362,7 +369,6 @@ permalink: /pricing.html
   flex-wrap: wrap;
 }
 
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -403,7 +409,6 @@ permalink: /pricing.html
   transform: translateY(-1px);
 }
 
-/* Sidebar */
 .pricing-sidebar {
   display: flex;
   flex-direction: column;
@@ -439,7 +444,6 @@ permalink: /pricing.html
   font-size: 0.95rem;
 }
 
-/* Feature Items */
 .feature-item {
   display: flex;
   gap: 12px;
@@ -473,7 +477,6 @@ permalink: /pricing.html
   line-height: 1.4;
 }
 
-/* Sidebar Actions */
 .sidebar-actions {
   display: flex;
   gap: 12px;
@@ -487,7 +490,6 @@ permalink: /pricing.html
   min-height: 44px;
 }
 
-/* Highlight Section */
 .highlight-price {
   font-size: 1.2rem;
   color: var(--brand);
@@ -534,7 +536,6 @@ permalink: /pricing.html
   width: 100%;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
   .pricing-cards {
     grid-template-columns: repeat(2, 1fr);
