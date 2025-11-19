@@ -7,6 +7,15 @@ permalink: /
 ## 📌 Latest 
 
 <div class="card-grid">
+  <div class="card app-promo">
+    <a href="https://astronuri-trade-tracker.netlify.app/" target="_blank" class="card-link">
+      <h3>📱 Trade Tracker Mobile App</h3>
+      <p>Track your trades and strategies on the go with our mobile application. Available now!</p>
+      <span class="card-badge">Mobile App</span>
+    </a>
+  </div>
+
+<div class="card-grid">
   {% if site.posts.size > 0 %}
     {% for post in site.posts limit:6 %}
       <div class="card">
