@@ -1304,3 +1304,158 @@ body{
     padding: 20px;
   }
 }
+
+/* Add this to your main CSS file or in the head of your default layout */
+<style>
+/* Professional Card Grid System */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.card-link:hover {
+    text-decoration: none;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.card .date {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+    margin: 0 0 16px 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card .date::before {
+    content: '📅';
+    font-size: 0.75rem;
+}
+
+.card .excerpt {
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Category badges */
+.card-badge {
+    display: inline-block;
+    background: #f8f9fa;
+    color: #495057;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-top: 16px;
+    align-self: flex-start;
+    border: 1px solid #e9ecef;
+}
+
+.card-badge.beginner {
+    background: #e3f2fd;
+    color: #1565c0;
+    border-color: #bbdefb;
+}
+
+.card-badge.strategy {
+    background: #f3e5f5;
+    color: #7b1fa2;
+    border-color: #e1bee7;
+}
+
+/* No posts state */
+.card.no-posts {
+    text-align: center;
+    padding: 48px 24px;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+}
+
+.card.no-posts h3 {
+    color: #6c757d;
+    margin-bottom: 12px;
+}
+
+.card.no-posts p {
+    color: #868e96;
+    margin-bottom: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Individual post styling enhancements */
+.post-content .card-grid {
+    margin: 2rem 0;
+}
+</style>
