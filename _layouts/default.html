@@ -25,6 +25,7 @@
       <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">☰</button>
 
       <nav id="siteNav" class="site-nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-close" aria-label="Close navigation">✕</button>
         <ul>
           <li><a href="{{ '/' | relative_url }}">Home</a></li>
           <li><a href="{{ '/about' | relative_url }}">About</a></li>
@@ -86,11 +87,14 @@
     (function(){
       var toggle = document.getElementById('navToggle');
       var nav = document.getElementById('siteNav');
+      var closeBtn = document.querySelector('.nav-close');
 
       function setOpen(open){
         toggle && toggle.setAttribute('aria-expanded', open);
         nav && nav.setAttribute('data-open', open ? 'true' : 'false');
         document.body.classList.toggle('nav-open', open);
+        // Prevent body scroll when nav is open
+        document.body.style.overflow = open ? 'hidden' : '';
       }
 
       toggle && toggle.addEventListener('click', function(e){
@@ -99,8 +103,20 @@
         setOpen(!isOpen);
       });
 
+      closeBtn && closeBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        setOpen(false);
+      });
+
       window.addEventListener('resize', function(){
         if (window.innerWidth > 900) setOpen(false);
+      });
+
+      // Close nav when clicking on a link (mobile)
+      nav && nav.addEventListener('click', function(e){
+        if (e.target.tagName === 'A' && window.innerWidth <= 900) {
+          setOpen(false);
+        }
       });
     })();
   </script>
