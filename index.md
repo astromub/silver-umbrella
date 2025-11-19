@@ -34,7 +34,7 @@ permalink: /
 ## 📱 Trade Anywhere With Our Mobile App
 
 <div class="card-grid">
-  <div class="card">
+  <div class="card mobile-app-card">
     <a href="https://astronuri-trade-tracker.netlify.app/" target="_blank" class="card-link">
       <h3>Mobile Trading Tracker</h3>
       <p class="date">Always Available</p>
