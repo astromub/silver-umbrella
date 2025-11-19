@@ -76,29 +76,24 @@ body{
   padding:0;
   list-style:none;
 }
-.site-nav a{
-  color:var(--brand);
-  text-decoration:none;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:600;
-  font-size:1rem;
-  transition:all 0.2s;
-  white-space:nowrap;
+/* Active navigation states - FIXED */
+.site-nav a:not(.btn-services).active,
+.sidebar nav a.active {
+  background: rgba(102,194,255,0.15) !important;
+  color: var(--brand) !important;
+  font-weight: 700 !important;
+  border: 1px solid var(--accent) !important;
 }
 .site-nav a:hover{
   background:rgba(102,194,255,0.1);
   transform:translateY(-1px);
 }
-/* Changed from .btn-pricing to .btn-services */
-.site-nav .btn-services{
-  background:linear-gradient(135deg, var(--accent), #0f93ff);
-  color:#fff;
-  padding:12px 24px;
-  border-radius:12px;
-  box-shadow:0 4px 16px rgba(6,30,44,0.15);
-  transition:all 0.2s;
-  font-weight:700;
+/* Services button active state */
+.site-nav .btn-services.active {
+  background: linear-gradient(135deg, #0f93ff, var(--accent)) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(6,30,44,0.2) !important;
+  border: 1px solid rgba(102,194,255,0.3) !important;
 }
 .site-nav .btn-services:hover{
   transform:translateY(-2px);
