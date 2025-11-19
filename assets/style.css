@@ -1458,4 +1458,74 @@ body{
 .post-content .card-grid {
     margin: 2rem 0;
 }
+
+/* Mobile App Card Styles */
+.mobile-features {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.feature-icon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.app-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 15px 0 10px 0;
+  padding-top: 15px;
+  border-top: 1px solid rgba(10,116,194,0.1);
+}
+
+/* Mobile badge style */
+.card-badge.mobile {
+  background: #e3f2fd;
+  color: #1565c0;
+  border-color: #bbdefb;
+}
+
+/* Ensure card layout consistency */
+.card-grid .card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card .excerpt {
+  flex-grow: 1;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .mobile-features {
+    gap: 10px;
+  }
+  
+  .feature-item {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+}
 </style>
