@@ -4,7 +4,8 @@ title: Home
 permalink: /
 ---
 
-## 📌 Latest News
+## 📌 Latest Trading Strategies
+
 <div class="card-grid">
   {% if site.posts.size > 0 %}
     {% for post in site.posts limit:6 %}
@@ -20,6 +21,15 @@ permalink: /
           {% endif %}
         </a>
       </div>
+    {% endfor %}
+  {% else %}
+    <div class="card no-posts">
+      <h3>🚫 No Posts Available</h3>
+      <p>Sorry, we couldn't find any strategies or updates at the moment.</p>
+      <p>Please check back later or explore our Beginner Guide for resources.</p>
+    </div>
+  {% endif %}
+</div>
 
 ## 📱 Trade Anywhere With Our Mobile App
 
@@ -53,14 +63,4 @@ permalink: /
     
     <p class="app-note">Optimized for mobile browsers - No download required</p>
   </div>
-</div>
-  
-  {% endfor %}
-  {% else %}
-    <div class="card no-posts">
-      <h3>🚫 No Posts Available</h3>
-      <p>Sorry, we couldn't find any strategies or updates at the moment.</p>
-      <p>Please check back later or explore our Beginner Guide for resources.</p>
-    </div>
-  {% endif %}
 </div>
