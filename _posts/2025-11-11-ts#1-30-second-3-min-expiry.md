@@ -6,7 +6,7 @@ categories: [strategy]
 description: "Learn a powerful 30-second trading strategy using SMA indicators, fractals, and RCI for quick market analysis and decision making."
 excerpt: "Master quick market analysis with this 30-second trading strategy using SMA, fractals, and RCI indicators for effective binary trading decisions."
 tags: [candlestick, binary, support resistance, bullish, bearish,RCI,Fractal,Moving Average]
-image: /images/coverlogo.png
+image: /images/scalping.png
 excerpt: "A disciplined 30-second scalping method using SMA crossovers, fractals, and RCI with risk control."
 ---
 
@@ -75,9 +75,20 @@ excerpt: "A disciplined 30-second scalping method using SMA crossovers, fractals
   <li><strong>Log Win/Loss:</strong> Record outcomes after each expiry for real-time monitoring.</li>
   <li><strong>Suggested Next Trade Cost:</strong> Follow tracker’s calculation to avoid manual errors.</li>
 </ul>
+
 <p><em>Let the indicators find the trade, but let the tracker enforce discipline. Never exceed its limits.</em></p>
 
+<p><img src="https://astronuri-trade-tracker.netlify.app/" alt="ASTRONuRi Trade Tracker Screenshot" style="max-width:100%; border:1px solid #ccc; border-radius:6px;" /></p>
+
+<h2>Practice Tips</h2>
+<ul>
+  <li>Test this strategy thoroughly on a demo account before going live.</li>
+  <li>Always set your Trade Tracker limits before trading.</li>
+  <li>Be patient—wait for all conditions to align before entering a trade.</li>
+  <li>Review your logs daily to understand performance and refine discipline.</li>
+</ul>
+
 <h2>Conclusion</h2>
-<p>This SMA(5)/SMA(10) + Fractal + RCI(9) approach is designed to capture short bursts of momentum. Its effectiveness depends entirely on patience and risk control. Test thoroughly on a demo account, set your tracker limits, and wait for all conditions to align before entering.</p>
+<p>This SMA(5)/SMA(10) + Fractal + RCI(9) approach is designed to capture short bursts of momentum. Its effectiveness depends entirely on patience and risk control. With the ASTRONuRi Trade Tracker enforcing discipline, you can trade confidently knowing your risk is contained.</p>
 
 <p><strong>Discipline wins the scalp war.</strong></p>
