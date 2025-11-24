@@ -78,7 +78,7 @@ excerpt: "A disciplined 30-second scalping method using SMA crossovers, fractals
 
 <p><em>Let the indicators find the trade, but let the tracker enforce discipline. Never exceed its limits.</em></p>
 
-<p><a href-"https://astronuri-trade-tracker.netlify.app/" alt="ASTRONuRi Trade Tracker" style="max-width:100%; border:1px solid #ccc; border-radius:6px;" /></a>
+<p><a href="https://astronuri-trade-tracker.netlify.app/" alt="ASTRONuRi Trade Tracker" style="max-width:100%; border:1px solid #ccc; border-radius:6px;" /></a>
 
 <h2>Practice Tips</h2>
 <ul>
